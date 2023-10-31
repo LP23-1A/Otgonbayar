@@ -1,0 +1,39 @@
+.modal{
+    width: 390px;
+    height: 490px;
+    padding: 10px;
+    opacity: 0;
+}
+h6{
+    font-size: 14px;
+    margin: 1px;
+}
+.m-top{
+    margin-top: 800px;
+}
+.w-368{
+    width: 360px;
+    height: 10px;
+}
+.desc{
+    width: 360px;
+    height: 60px;
+}
+.addtaskbtn{
+    margin-top: 50px;
+    width: 380px;
+}
+.addbtn{
+    width: 100%;
+    height: 30px;
+}
+select{
+    width: 375px;
+    height: 30px;
+}
+/* .addtask{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 1;
+} */

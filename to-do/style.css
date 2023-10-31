@@ -5,9 +5,15 @@ body{
     background-image: url(https://wallpaperaccess.com/full/937698.jpg);
     background-size: cover;
 }
+.po-rela{
+    position: relative;
+}
+.po-abs{
+    position: absolute;
+}
 .container{
    width: 100%;
-   height: 600px;
+   height: 800px;
 }
 h2{
     margin: 10px 0px 10px 0px;
@@ -28,11 +34,17 @@ p, h4{
 .align-center{
     align-items: center;
 }
+.c-white{
+    color: white;
+}
 .bg-grey{
     background-color: #EBECF0;
 }
 .bg-white{
     background-color: white;
+}
+.bg-black{
+    background-color: black;
 }
 .m-top-5px{
     margin: 10px 0px 10px 0px;
@@ -58,7 +70,7 @@ p, h4{
 .gap-12{
     gap: 12px;
 }
-.board{
+.card{
     width: 294px;
     height: 208px;
 }
@@ -83,7 +95,8 @@ svg{
     height: 10px;
 }
 .add{
-    width: 280px;
+    border: 1px;
+    width: 295px;
 }
 .add:hover{
     border-radius: 5px;

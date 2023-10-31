@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO DO LIST</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="addtask.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
 </head>
 <body>
    <div class="container flex justify-center align-center">
-    <div class="boards flex gap-12">
-        <div class="board bg-grey p-8 b-radius-15">
-            <div class="board-header">
+    <div class="cards flex gap-12 po-rela">
+        <div class="card bg-grey p-8 b-radius-15">
+            <div class="card-header">
                 <h2>To do</h2>
             </div>
-            <div class="cards bg-white b-radius-5 flex p-8 gap-12">
+            <div class="card-text bg-white b-radius-5 flex p-8 gap-12">
                 <div class="done w-24 icon flex justify-center align-center grey-hover m-top-5px">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
@@ -40,16 +41,16 @@
                     </div>
                 </div>
             </div>
-            <div class="add flex p-8 gap-12 grey-hover w-206 m-top-5px">
-                <div>+</div>
-                <div>Add card</div>
-            </div>
+                <button class="add flex p-8 gap-12 grey-hover w-206 m-top-5px">
+                    <div>+</div>
+                    <div>Add card</div>
+                </button>
         </div>
-        <div class="board bg-grey p-8 b-radius-15">
-            <div class="board-header">
+        <div class="card bg-grey p-8 b-radius-15">
+            <div class="card-header">
                 <h2>In progress</h2>
             </div>
-            <div class="cards bg-white b-radius-5 flex p-8 gap-12">
+            <div class="card-text bg-white b-radius-5 flex p-8 gap-12">
                 <div class="done w-24 icon flex justify-center align-center grey-hover m-top-5px">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
@@ -75,31 +76,66 @@
                     </div>
                 </div>
             </div>
-            <div class="add flex p-8 gap-12 grey-hover w-206 m-top-5px">
+            <button class="add flex p-8 gap-12 grey-hover w-206 m-top-5px">
                 <div>+</div>
                 <div>Add card</div>
-            </div>
+            </button>
         </div>
-        <div class="board-1 bg-grey p-8 b-radius-15 h-100">
-            <div class="board-header">
+        <div class="card-1 bg-grey p-8 b-radius-15 h-100">
+            <div class="card-header">
                 <h2>Stuck</h2>
             </div>
-            <div class="add flex p-8 gap-12 grey-hover w-206 m-top-5px">
+            <button class="add flex p-8 gap-12 grey-hover w-206 m-top-5px">
                 <div>+</div>
                 <div>Add card</div>
-            </div>
+            </button>
         </div>
-        <div class="board-1 bg-grey p-8 b-radius-15 h-100">
-            <div class="board-header">
+        <div class="card-1 bg-grey p-8 b-radius-15 h-100">
+            <div class="card-header">
                 <h2>Done</h2>
             </div>
-            <div class="add flex p-8 gap-12 grey-hover w-206 m-top-5px">
+            <button class="add flex p-8 gap-12 grey-hover w-206 m-top-5px">
                 <div>+</div>
                 <div>Add card</div>
+            </button>
+        </div>
+    </div>
+    <div class="addtask flex justify-center align-center po-abs m-top">
+        <div class="modal bg-white b-radius-15">
+            <div class="modal-header">
+                <h1>Add Task</h1>
+            </div>
+            <div class="title p-8">
+                <h6>Title</h6>
+                <input class="w-368 p-8" type="text">
+            </div>
+            <div class="description p-8">
+                <h6>Description</h6>
+                <input class="desc p-8" type="text">
+            </div>
+            <div class="status p-8">
+                <h6>Status</h6>
+                <select>
+                    <option>To do</option>
+                    <option>In progress</option>
+                    <option>Stuck</option>
+                    <option>Done</option>
+                </select>
+            </div>
+            <div class="priority p-8">
+                <h6>Priority</h6>
+                    <select>
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                    </select>
+            </div>
+            <div class="addtaskbtn p-8 ">
+                <button class="addbtn bg-black color c-white">Add Task</button>
             </div>
         </div>
     </div>
-   </div>
+    </div>
    <script src="todo.js"></script>
 </body>
 </html>
