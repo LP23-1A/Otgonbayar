@@ -11,6 +11,10 @@ function modalcard() {
 function none() {
     modal.style.opacity = '0'
 }
+function bgblack() {
+    addtask.style.backgroundColor = 'black'
+}
+
 addbtn.onclick = none
 add[0].onclick = modalcard
 add[1].onclick = modalcard
