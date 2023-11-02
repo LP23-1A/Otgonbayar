@@ -2,7 +2,8 @@
     width: 390px;
     height: 490px;
     padding: 10px;
-    opacity: 0;
+    display: none;
+    flex-direction: column;
 }
 h6{
     font-size: 14px;
@@ -31,9 +32,3 @@ select{
     width: 375px;
     height: 30px;
 }
-/* .addtask{
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    opacity: 1;
-} */
