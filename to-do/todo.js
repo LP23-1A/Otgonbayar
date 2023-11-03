@@ -4,24 +4,36 @@ let modal = document.querySelector('.modal')
 let add = document.querySelectorAll('.add')
 let addbtn = document.querySelector('.addbtn')
 let addtask = document.querySelector('.addtask')
-let bgopa = document.querySelector('.bgopacity')
+let bgopacity = document.querySelector('.bgopacity')
+let cards = document.querySelector('.cards')
 
 function modalcard() {
     modal.style.display = 'flex'
+    bgopacity.style.display = 'flex'
+    cards.style.opacity = '0.7'
 }
 function none() {
     modal.style.display = 'none'
-}
-function bg() {
-    bgopa.style.display = 'flex'
+    bgopacity.style.display = 'none'
+    cards.style.opacity = '1'
 }
 
-add[0].onclick = bg
-add[1].onclick = bg
-add[2].onclick = bg
-add[3].onclick = bg
+let remove = document.getElementsByClassName("remove");
+for (let a = 0; a < remove.length; a++) {
+    remove[a].onclick = function() {
+    let rmv = document.querySelector('.card-text');
+    rmv.remove(remove)
+    }
+}
+
+const data = []
+
+function setData() {
+    data.push({exmaple, example})
+}
 
 addbtn.onclick = none
+
 add[0].onclick = modalcard
 add[1].onclick = modalcard
 add[2].onclick = modalcard
