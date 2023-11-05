@@ -27,9 +27,40 @@ for (let a = 0; a < remove.length; a++) {
 }
 
 const data = []
+addtask.onclick = adddata
 
-function setData() {
-    data.push({exmaple, example})
+function adddata() {
+    let title = document.getElementById('title')
+    let description = document.getElementById('desc')
+    let status = document.getElementById('status')
+    let priority = document.getElementById('priority')
+    data.push({ title, description, status, priority })
+    render(data)
+}
+function render(data) {
+    let card = document.getElementsByClassName('card')
+    card[0].innerHTML = ''
+    card[1].innerHTML = ''
+    card[2].innerHTML = ''
+    card[3].innerHTML = ''
+    data.map((el) => {
+     const todo = `
+     <div class = "todo">
+        <p>${el.title}</p>
+        <p>${el.description}</p>
+        <span>${el.priority}</span>
+    </div>`
+    if(el.status === "todo"){
+        card[0].innerHTML += todo
+    }else if (el.status === "inprogress"){
+        card[1].innerHTML += todo
+    }else if (el.status === "stuck"){
+        card[2].innerHTML += todo
+    }else if (el.status === "done"){
+        card[3].innerHTML += todo
+    }
+    card.innerHTML += todo
+    })
 }
 
 addbtn.onclick = none
