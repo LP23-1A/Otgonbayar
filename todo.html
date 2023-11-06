@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do</title>
+    <link rel="stylesheet" href="todostyle.css">
+</head>
+<body>
+    <div class="bgaopa"></div>
+    <div class="container wh-100 flex justify-center align-center">
+        <div class="cards flex gap-20">
+            <div class="card bg-grey">
+                <h2>To do</h2>
+                <button class="flex gap-12 bg-grey grey-hover">
+                    <div>+</div>
+                    <div>Add card</div>
+                </button>
+            </div>
+            <div class="card bg-grey">
+                <h2>In progress</h2>
+                <button class="flex gap-12 bg-grey grey-hover">
+                    <div>+</div>
+                    <div>Add card</div>
+                </button>
+            </div>
+            <div class="card bg-grey">
+                <h2>Stuck</h2>
+                <button class="flex gap-12 bg-grey grey-hover">
+                    <div>+</div>
+                    <div>Add card</div>
+                </button>
+            </div>
+            <div class="card bg-grey">
+                <h2>Done</h2>
+                <button class="flex gap-12 bg-grey grey-hover">
+                    <div>+</div>
+                    <div>Add card</div>
+                </button>
+            </div>
+        </div>
+        <div class="modal flex bg-white gap-12 po-abs">
+            <div class="modal-header">
+                <h2>Add task</h2>
+            </div>
+            <div>
+                <h5>Title</h5>
+                <input id="title" type="text">
+            </div>
+            <div>
+                <h5>Description</h5>
+                <input class="desc" id="description" type="text">
+            </div>
+            <div>
+                <h5>Status</h5>
+            <select id="status">
+                <option value="todo">To do</option>
+                <option value="inprogress">In progress</option>
+                <option value="Stuck">Stuck</option>
+                <option value="Done">Done</option>
+            </select>
+            </div>
+            <div>
+                <h5>Priority</h5>
+            <select id="priority">
+                <option value="low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            </div>
+            <div class="addtaskbtn">
+                <button class="addbtn bg-black color-white">Add Task</button>
+            </div>
+        </div>
+    </div>
+    <script src="todolist.js"></script>
+</body>
+</html>
