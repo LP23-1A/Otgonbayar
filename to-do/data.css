@@ -1,0 +1,28 @@
+.cardtext{
+    padding: 8px;
+    border-radius: 5px;
+}
+.done{
+    width: 24px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: black solid 1px;
+}
+.margin-top-5{
+    margin-top: 5px;
+}
+svg{
+    width: 10px;
+    height: 10px;
+}
+.category{
+    font-size: 12px;
+    width: 36px;
+    height: 16px;
+    padding: 4px 8px;
+    border: grey solid 1px;
+    border-radius: 10px;
+}
