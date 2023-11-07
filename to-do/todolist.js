@@ -1,27 +1,50 @@
 let body = document.querySelector('body')
 let container = document.querySelector('container')
+let bgaopa = document.querySelector('bgaopa')
+let modal = document.querySelector('.modal')
+let addcard = document.querySelector('.addcard')
+let addtaskbtn = document.querySelector('.addtaskbtn')
+let addbtn = document.querySelector('.addbtn')
+let removebtn = document.querySelector('.remove')
 
-let data = []
+function popup(){
+    modal.style.display = "block"
+}
+function none(){
+    modal.style.display = "none"
+}
+function randomnum(){
+    return String(Math.random(1))
+}
+let remove = []
+function removecard(){
+    remove.forEach(() =>{
+        console.log();
+    })
+}
+let data = [
+]
+addbtn.onclick = none
+
+addtaskbtn.onclick = adddata
 
 function adddata() {
     let title = document.getElementById('title').value
     let description = document.getElementById('description').value
     let status = document.getElementById('status').value
     let priority = document.getElementById('priority').value
-
     data.push({ title, description, status, priority})
     render(data)
 }
-
 function render(data) {
-    const todo = document.querySelectorAll('.card')
-    card[0].innerHTML = ""
-    card[1].innerHTML = ""
-    card[2].innerHTML = ""
-    card[3].innerHTML = ""
+    const empty = document.querySelectorAll('.empty')
+    empty[0].innerHTML = ""
+    empty[1].innerHTML = ""
+    empty[2].innerHTML = ""
+    empty[3].innerHTML = ""
     data.map((el) => {
-        const todo = `
-        <div class="cardtext bg-white flex gap-12">
+        const carddata = `
+        <div class="cardtext bg-white flex gap-12 justify-between">
         <div class="done icon flex justify-center align-center grey-hover margin-top-5">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
@@ -30,9 +53,9 @@ function render(data) {
             </div>
         </div>
         <div>
-            <h4 class="margin-top-5">Todo</h4>
-            <p class="margin-top-5">This is todo card</p>
-            <div class="category flex justify-center align-center grey-hover margin-top-5">High</div>
+            <h4 class="margin-top-5">${el.title}</h4>
+            <p class="margin-top-5">${el.description}</p>
+            <div class="category flex justify-center align-center grey-hover margin-top-5">${el.priority}</div>
         </div>
         <div>
             <div class="remove icon flex justify-center align-center margin-top-5 grey-hover">
@@ -47,7 +70,15 @@ function render(data) {
             </div>
         </div>
         </div>`
-        if
-    }
-    )
+        if(el.status === "todo"){
+            empty[0].innerHTML += carddata
+        } else if(el.status === "inprogress"){
+            empty[1].innerHTML += carddata
+        }else if(el.status === "Stuck"){
+            empty[2].innerHTML += carddata
+        }else if(el.status === "Done"){
+            empty[3].innerHTML += carddata
+        }
+        empty.innerHTML += carddata
+        })
 }

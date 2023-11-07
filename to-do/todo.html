@@ -7,34 +7,38 @@
     <link rel="stylesheet" href="todostyle.css">
     <link rel="stylesheet" href="data.css">
 </head>
-<body>
-    <div class="bgaopa"></div>
-    <div class="container wh-100 flex justify-center align-center">
+<body class="po-rela">
+    <div class="bgaopa po-abs"></div>
+    <div class="container wh-100 flex justify-center align-center po-abs">
         <div class="cards flex gap-20">
             <div class="card bg-grey">
                 <h2>To do</h2>
-                <button class="flex gap-12 bg-grey grey-hover">
+                <div class="empty"></div>
+                <button class="addcard flex gap-12 bg-grey grey-hover" onclick="popup()">
                     <div>+</div>
                     <div>Add card</div>
                 </button>
             </div>
             <div class="card bg-grey">
                 <h2>In progress</h2>
-                <button class="flex gap-12 bg-grey grey-hover">
+                <div class="empty"></div>
+                <button class="addcard flex gap-12 bg-grey grey-hover" onclick="popup()">
                     <div>+</div>
                     <div>Add card</div>
                 </button>
             </div>
             <div class="card bg-grey">
                 <h2>Stuck</h2>
-                <button class="flex gap-12 bg-grey grey-hover">
+                <div class="empty"></div>
+                <button class="addcard flex gap-12 bg-grey grey-hover" onclick="popup()">
                     <div>+</div>
                     <div>Add card</div>
                 </button>
             </div>
             <div class="card bg-grey">
                 <h2>Done</h2>
-                <button class="flex gap-12 bg-grey grey-hover">
+                <div class="empty"></div>
+                <button class="addcard flex gap-12 bg-grey grey-hover" onclick="popup()">
                     <div>+</div>
                     <div>Add card</div>
                 </button>
