@@ -5,7 +5,6 @@ let modal = document.querySelector('.modal')
 let addcard = document.querySelector('.addcard')
 let addtaskbtn = document.querySelector('.addtaskbtn')
 let addbtn = document.querySelector('.addbtn')
-let removebtn = document.querySelectorAll('.remove')
 let countnum = document.querySelectorAll('.count')
 
     let counttodo = document.querySelector('.counttodo')
@@ -20,29 +19,8 @@ function none(){
     modal.style.display = "none"
 }
 
-function randomNum() {
-    return String(Math.random(1));
-}  
-
-// function uid() {
-// return "id-" + Math.random();    
-// }
-
-// function removecard(element) {
-//     const deletecard = data.filter((item) => item.id !== element.parentElement.id)
-//     data = deletecard
-//     render(deletecard)
-// }
-
-// removebtn.forEach((element) => {
-//     removebtn.onclick = () => remove(element);
-//   });
-
-let count = {
-    todo: 0,
-    inprogress: 0, 
-    stuck: 0,
-    done: 0,  
+function rmvid() {
+    return "id-" + Math.random()  
 }
 
 let data = []
@@ -56,24 +34,23 @@ function adddata() {
     let description = document.getElementById('description').value
     let status = document.getElementById('status').value
     let priority = document.getElementById('priority').value
-    data.push({ title, description, status, priority})
-    data.id = randomNum()
+    data.push({ title, description, status, priority, id:rmvid()})
     render(data)
-    counttodo.innerHTML = count.todo
-    countprogress.innerHTML = count.inprogress
-    countstuck.innerHTML = count.stuck
-    countdone.innerHTML = count.done
 }
-function deleteItem(element) {
-    const findId = element.id;
-    const deletecard = data.filter((el) => {
-      console.log(el.id, findId);
-      return el.id !== findId;
-    });
-    data = deletecard;
-    render(data);
+
+const removecard = (el) => {
+    const newArray = data.filter((item) => item.id !== el.id)
+    data = newArray
+    render(newArray)
   }
+
 function render(data) {
+    let count = {
+        todo: 0,
+        inprogress: 0, 
+        stuck: 0,
+        done: 0,  
+    }
     const empty = document.querySelectorAll('.empty')
     empty[0].innerHTML = ""
     empty[1].innerHTML = ""
@@ -102,7 +79,7 @@ function render(data) {
                     </svg>
                 </div>
             </div>
-                <div class="icon flex justify-center align-center grey-hover margin-top-5">
+                <div class="edit icon flex justify-center align-center grey-hover margin-top-5">
                 <div><i class='fa-solid fa-pen-to-square'></i></div>
             </div>
         </div>
@@ -120,12 +97,16 @@ function render(data) {
             empty[3].innerHTML += carddata
             count.done += 1
         }
-        empty.innerHTML += carddata
         })
+        counttodo.innerHTML = count.todo
+        countprogress.innerHTML = count.inprogress
+        countstuck.innerHTML = count.stuck
+        countdone.innerHTML = count.done
+
         let removebtn = document.querySelectorAll('.remove')
+        let donebtn = document.querySelectorAll('.done')
+        
         removebtn.forEach((element) => {
-        element.onclick = function () {
-        deleteItem(element);
-        };
-          });
+            element.onclick = () => removecard(element)
+          })
 }
