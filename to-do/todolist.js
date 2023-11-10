@@ -17,7 +17,6 @@ function popup(){
 function none(){
     modal.style.display = "none"
 }
-
 function rmvid() {
     return "id-" + Math.random()
 }
@@ -102,14 +101,40 @@ function render(data) {
         countdone.innerHTML = count.done
 
         let removebtn = document.querySelectorAll('.remove')
-        let donebtn = document.querySelectorAll('.done')
+        // let donebtn = document.querySelectorAll('.done')
         
         removebtn.forEach((element) => {
             element.onclick = () => removecard(element)
           })
 }
-
+let dragempty = document.querySelectorAll('#dragempty')
+let cards = document.querySelectorAll('.card')
 let draggeditem = null
-empty.forEach((card) =>{
-    
+        dragempty.forEach(() => {
+        dragempty.addEventListener('dragstart', (event) => {
+        event.target.value
+        draggeditem = event.target
+        event.datatransfer.setdata('text', event.target.getAttribute('data-id'))
+    })
+    dragempty.addEventListener('dragend', () => {
+    draggeditem = nulls
+    })
 })
+    cards.forEach((dragempty) => {
+    dragempty.addEventListener('dragover', (event) => {
+    event.preventDefault();
+ });
+    dragempty.addEventListener('dragenter', (event) => {
+    event.preventDefault();
+ if (draggeditem) {
+    const draggingBoard = draggeditem.parentNode;
+ if (draggingBoard !== event.currentTarget) {
+    event.currentTarget.appendChild(draggeditem);
+ }
+ }
+ });
+    dragempty.addEventListener('dragleave', () => { });
+    dragempty.addEventListener('drop', (event) => {
+    event.preventDefault();
+ });
+ });
