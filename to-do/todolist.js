@@ -11,7 +11,6 @@ let countnum = document.querySelectorAll('.count')
     let countprogress = document.querySelector('.countprogress')
     let countstuck = document.querySelector('.countstuck')
     let countdone = document.querySelector('.countdone')
-
 function popup(){
     modal.style.display = "block"
 }
