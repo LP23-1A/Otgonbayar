@@ -20,7 +20,7 @@ function none(){
 }
 
 function rmvid() {
-    return "id-" + Math.random()  
+    return "id-" + Math.random()
 }
 
 let data = []
@@ -39,11 +39,10 @@ function adddata() {
 }
 
 const removecard = (el) => {
-    const newArray = data.filter((item) => item.id !== el.id)
-    data = newArray
-    render(newArray)
+    const filterid= data.filter((item) => item.id !== el.id)
+    data = filterid
+    render(filterid)
   }
-
 function render(data) {
     let count = {
         todo: 0,
@@ -110,3 +109,8 @@ function render(data) {
             element.onclick = () => removecard(element)
           })
 }
+
+let draggeditem = null
+empty.forEach((card) =>{
+    
+})

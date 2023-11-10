@@ -10,13 +10,13 @@
 <body class="po-rela">
     <div class="bgaopa po-abs"></div>
     <div class="container wh-100 flex justify-center align-center po-abs">
-        <div class="cards flex gap-20">
+        <div class="cards flex gap-20 cardscontainer">
             <div class="card bg-grey">
                 <div class="flex align-center gap-12">
                     <h2>To do</h2>
                     <div class="counttodo"></div>
                 </div>
-                <div class="empty"></div>
+                <div class="empty" draggable="true" data-id="dragdrop" id="dragempty"></div>
                 <button class="addcard flex gap-12 bg-grey grey-hover" onclick="popup()">
                     <div>+</div>
                     <div>Add card</div>
@@ -27,7 +27,7 @@
                    <h2>In progress</h2>
                     <div class="countprogress"></div> 
                 </div>
-                <div class="empty"></div>
+                <div class="empty" draggable="true" data-id="dragdrop" id="dragempty"></div>
                 <button class="addcard flex gap-12 bg-grey grey-hover" onclick="popup()">
                     <div>+</div>
                     <div>Add card</div>
@@ -38,7 +38,7 @@
                     <h2>Stuck</h2>
                     <div class="countstuck"></div>  
                 </div>
-                <div class="empty"></div>
+                <div class="empty" draggable="true" data-id="dragdrop" id="dragempty"></div>
                 <button class="addcard flex gap-12 bg-grey grey-hover" onclick="popup()">
                     <div>+</div>
                     <div>Add card</div>
@@ -49,7 +49,7 @@
                     <h2>Done</h2>
                     <div class="countdone"></div>
                 </div>
-                <div class="empty"></div>
+                <div class="empty" draggable="true" data-id="dragdrop" id="dragempty"></div>
                 <button class="addcard flex gap-12 bg-grey grey-hover" onclick="popup()">
                     <div>+</div>
                     <div>Add card</div>
