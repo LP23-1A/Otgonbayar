@@ -44,9 +44,8 @@ const removecard = (el) => {
 
 const donecard = (el) => {
     const donelist = data.map((item) => {
-      if (item.id === el.id) {
+        item.id === el.id
         item.status = "Done";
-      }
       return item;
     });
     render(donelist);
@@ -122,34 +121,34 @@ function render(data) {
             element.onclick = () => donecard(element);
         });
 }
-// let dragempty = document.querySelectorAll('#dragempty')
-// let cards = document.querySelectorAll('.card')
-// let draggeditem = null
-//         dragempty.forEach(() => {
-//         dragempty.addEventListener('dragstart', (event) => {
-//         event.target.value
-//         draggeditem = event.target
-//         event.datatransfer.setdata('text', event.target.getAttribute('data-id'))
-//     })
-//     dragempty.addEventListener('dragend', () => {
-//     draggeditem = nulls
-//     })
-// })
-//     cards.forEach((dragempty) => {
-//     dragempty.addEventListener('dragover', (event) => {
-//     event.preventDefault();
-//  });
-//     dragempty.addEventListener('dragenter', (event) => {
-//     event.preventDefault();
-//  if (draggeditem) {
-//     const draggingBoard = draggeditem.parentNode;
-//  if (draggingBoard !== event.currentTarget) {
-//     event.currentTarget.appendChild(draggeditem);
-//  }
-//  }
-//  });
-//     dragempty.addEventListener('dragleave', () => { });
-//     dragempty.addEventListener('drop', (event) => {
-//     event.preventDefault();
-//  });
-//  });
+const boards = document.querySelectorAll(".card")
+const carddata = document.querySelectorAll(".empty")
+let draggeditem = null
+    carddata.forEach((carddata) =>{
+    carddata.addEventListener('dragstart', (event) => {
+        event.target.value
+        draggeditem = event.target
+        event.dataTransfer.setData('text' , event.target.getAttribute('data-id'))
+    })
+    carddata.addEventListener('dragend',() => {
+    draggeditem = null
+    })
+    })
+    boards.forEach((board) => {
+    board.addEventListener('dragover', (event) => {
+    event.preventDefault()
+    })
+    board.addEventListener('dragenter', (event) => {
+    event.preventDefault()
+    if (draggeditem) {
+        const draggingBoard = draggeditem.parentNode;
+     if (draggingBoard !== event.currentTarget) {
+        event.currentTarget.appendChild(draggeditem);
+     }
+     }
+    })
+    board.addEventListener('dragleave', () => { });
+    board.addEventListener('drop', (event) => {
+    event.preventDefault();
+    })
+    })
