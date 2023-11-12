@@ -44,7 +44,7 @@ const removecard = (el) => {
 
 const donecard = (el) => {
     const donelist = data.map((item) => {
-        item.id === el.id
+        item.id !== el.id
         item.status = "Done";
       return item;
     });
@@ -121,9 +121,15 @@ function render(data) {
             element.onclick = () => donecard(element);
         });
 }
+const cardtodo = document.querySelector('#cardtodo')
+const cardprogress = document.querySelector('#cardprogress')
+const cardstuck = document.querySelector('#cardstuck')
+const carddone = document.querySelector('#carddone')
+
 const boards = document.querySelectorAll(".card")
 const carddata = document.querySelectorAll(".empty")
 let draggeditem = null
+
     carddata.forEach((carddata) =>{
     carddata.addEventListener('dragstart', (event) => {
         event.target.value
@@ -141,8 +147,8 @@ let draggeditem = null
     board.addEventListener('dragenter', (event) => {
     event.preventDefault()
     if (draggeditem) {
-        const draggingBoard = draggeditem.parentNode;
-     if (draggingBoard !== event.currentTarget) {
+        const dragging = draggeditem.parentNode;
+     if (dragging !== event.currentTarget) {
         event.currentTarget.appendChild(draggeditem);
      }
      }
