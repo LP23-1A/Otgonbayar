@@ -7,14 +7,14 @@ let addtaskbtn = document.querySelector('.addtaskbtn')
 let addbtn = document.querySelector('.addbtn')
 let countnum = document.querySelectorAll('.count')
 
-    let counttodo = document.querySelector('.counttodo')
-    let countprogress = document.querySelector('.countprogress')
-    let countstuck = document.querySelector('.countstuck')
-    let countdone = document.querySelector('.countdone')
-function popup(){
+let counttodo = document.querySelector('.counttodo')
+let countprogress = document.querySelector('.countprogress')
+let countstuck = document.querySelector('.countstuck')
+let countdone = document.querySelector('.countdone')
+function popup() {
     modal.style.display = "block"
 }
-function none(){
+function none() {
     modal.style.display = "none"
 }
 function rmvid() {
@@ -32,31 +32,34 @@ function adddata() {
     let description = document.getElementById('description').value
     let status = document.getElementById('status').value
     let priority = document.getElementById('priority').value
-    data.push({ title, description, status, priority, id:rmvid()})
+    data.push({ title, description, status, priority, id: rmvid() })
     render(data)
+    draganddrop()
 }
 
 const removecard = (el) => {
-    const filterid= data.filter((item) => item.id !== el.id)
+    const filterid = data.filter((item) => item.id !== el.id)
     data = filterid
     render(filterid)
-  }
+}
 
 const donecard = (el) => {
-    const donelist = data.map((item) => {
-        item.id !== el.id
-        item.status = "Done";
-      return item;
+
+    data.map((item) => {
+        if (item.id === el.id) {
+            item.status = "Done";
+        }
     });
-    render(donelist);
+
+    render(data);
 };
 
 function render(data) {
     let count = {
         todo: 0,
-        inprogress: 0, 
+        inprogress: 0,
         stuck: 0,
-        done: 0,  
+        done: 0,
     }
     const empty = document.querySelectorAll('.empty')
     empty[0].innerHTML = ""
@@ -65,8 +68,8 @@ function render(data) {
     empty[3].innerHTML = ""
     data.map((el) => {
         const carddata = `
-        <div class="cardtext bg-white flex gap-12 justify-between">
-        <div class="done icon flex justify-center align-center grey-hover margin-top-5">
+        <div class="cardtext bg-white flex gap-12 justify-between" draggable="true">
+        <div class="done icon flex justify-center align-center grey-hover margin-top-5" id="${el.id}">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
                 <path d="M 26.980469 5.9902344 A 1.0001 1.0001 0 0 0 26.292969 6.2929688 L 11 21.585938 L 4.7070312 15.292969 A 1.0001 1.0001 0 1 0 3.2929688 16.707031 L 10.292969 23.707031 A 1.0001 1.0001 0 0 0 11.707031 23.707031 L 27.707031 7.7070312 A 1.0001 1.0001 0 0 0 26.980469 5.9902344 z"></path>
@@ -91,70 +94,75 @@ function render(data) {
             </div>
         </div>
         </div>`
-        if(el.status === "todo"){
+        if (el.status === "todo") {
             empty[0].innerHTML += carddata
             count.todo += 1
-        }else if(el.status === "inprogress"){
+        } else if (el.status === "inprogress") {
             empty[1].innerHTML += carddata
             count.inprogress += 1
-        }else if(el.status === "Stuck"){
+        } else if (el.status === "Stuck") {
             empty[2].innerHTML += carddata
             count.stuck += 1
-        }else if(el.status === "Done"){
+        } else if (el.status === "Done") {
             empty[3].innerHTML += carddata
             count.done += 1
         }
-        })
-        counttodo.innerHTML = count.todo
-        countprogress.innerHTML = count.inprogress
-        countstuck.innerHTML = count.stuck
-        countdone.innerHTML = count.done
+    })
+    counttodo.innerHTML = count.todo
+    countprogress.innerHTML = count.inprogress
+    countstuck.innerHTML = count.stuck
+    countdone.innerHTML = count.done
 
-        let removebtn = document.querySelectorAll('.remove')
-        let donebtn = document.querySelectorAll('.done')
+    let removebtn = document.querySelectorAll('.remove')
+    let donebtn = document.querySelectorAll('.done')
+    let editbtn = document.querySelectorAll('.edit')
 
-        
-        removebtn.forEach((element) => {
-            element.onclick = () => removecard(element)
-          })
-        donebtn.forEach((element) => {
-            element.onclick = () => donecard(element);
-        });
+    removebtn.forEach((element) => {
+        element.onclick = () => removecard(element)
+    })
+    donebtn.forEach((element) => {
+        console.log(element)
+        element.onclick = () => donecard(element);
+    });
+    draganddrop()
 }
 const cardtodo = document.querySelector('#cardtodo')
 const cardprogress = document.querySelector('#cardprogress')
 const cardstuck = document.querySelector('#cardstuck')
 const carddone = document.querySelector('#carddone')
 
-const boards = document.querySelectorAll(".card")
-const carddata = document.querySelectorAll(".empty")
-let draggeditem = null
+function draganddrop() {
+    const boards = document.querySelectorAll(".card")
+    const carddata = document.querySelectorAll(".empty")
+    let draggeditem = null
 
-    carddata.forEach((carddata) =>{
-    carddata.addEventListener('dragstart', (event) => {
-        event.target.value
-        draggeditem = event.target
-        event.dataTransfer.setData('text' , event.target.getAttribute('data-id'))
-    })
-    carddata.addEventListener('dragend',() => {
-    draggeditem = null
-    })
+    carddata.forEach((card) => {
+        card.addEventListener('dragstart', (event) => {
+            event.target.value
+            draggeditem = event.target
+            event.dataTransfer.setData('text', event.target.getAttribute('id'))
+        })
+        card.addEventListener('dragend', () => {
+            draggeditem = null
+        })
     })
     boards.forEach((board) => {
-    board.addEventListener('dragover', (event) => {
-    event.preventDefault()
+        board.addEventListener('dragover', (event) => {
+            event.preventDefault()
+        })
+        board.addEventListener('dragenter', (event) => {
+            event.preventDefault()
+            if (draggeditem) {
+                const dragging = draggeditem.parentNode;
+                if (dragging !== event.currentTarget) {
+                    event.currentTarget.querySelector('.empty').appendChild(draggeditem);
+                }
+            }
+        })
+        board.addEventListener('dragleave', () => { });
+        board.addEventListener('drop', (event) => {
+            event.preventDefault();
+
+        })
     })
-    board.addEventListener('dragenter', (event) => {
-    event.preventDefault()
-    if (draggeditem) {
-        const dragging = draggeditem.parentNode;
-     if (dragging !== event.currentTarget) {
-        event.currentTarget.appendChild(draggeditem);
-     }
-     }
-    })
-    board.addEventListener('dragleave', () => { });
-    board.addEventListener('drop', (event) => {
-    event.preventDefault();
-    })
-    })
+}
