@@ -44,13 +44,11 @@ const removecard = (el) => {
 }
 
 const donecard = (el) => {
-
     data.map((item) => {
         if (item.id === el.id) {
             item.status = "Done";
         }
     });
-
     render(data);
 };
 
