@@ -113,7 +113,7 @@ function render(data) {
 
     let removebtn = document.querySelectorAll('.remove')
     let donebtn = document.querySelectorAll('.done')
-    let editbtn = document.querySelectorAll('.edit')
+    // let editbtn = document.querySelectorAll('.edit')
 
     removebtn.forEach((element) => {
         element.onclick = () => removecard(element)
