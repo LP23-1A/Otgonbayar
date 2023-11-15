@@ -27,7 +27,24 @@ addbtn.onclick = none
 
 addtaskbtn.onclick = adddata
 
-function adddata() {
+function adddata(element) {
+    if (element === "edit") {
+        const id = el.id
+        for (let a = 0; a < data.length; a++) {
+            if (data[a].id === id) {
+                let title = document.getElementById('title').value
+                let description = document.getElementById('description').value
+                let status = document.getElementById('status').value
+                let priority = document.getElementById('priority').value
+                data[a].title = title
+                data[a].description = description
+                data[a].status = status
+                data[a].priority = priority
+            }
+        }
+        render(data)
+        return
+    }
     let title = document.getElementById('title').value
     let description = document.getElementById('description').value
     let status = document.getElementById('status').value
@@ -36,7 +53,7 @@ function adddata() {
     render(data)
     draganddrop()
 }
-
+console.log(adddata);
 const removecard = (el) => {
     const filterid = data.filter((item) => item.id !== el.id)
     data = filterid
@@ -46,11 +63,11 @@ const removecard = (el) => {
 const donecard = (el) => {
     data.map((item) => {
         if (item.id === el.id) {
-            item.status = "Done";
+            item.status = "Done"
         }
-    });
-    render(data);
-};
+    })
+    render(data)
+}
 
 function render(data) {
     let count = {
@@ -87,7 +104,7 @@ function render(data) {
                     </svg>
                 </div>
             </div>
-                <div class="edit icon flex justify-center align-center grey-hover margin-top-5">
+                <div class="edit icon flex justify-center align-center grey-hover margin-top-5" id="${el.id}">
                 <div><i class='fa-solid fa-pen-to-square'></i></div>
             </div>
         </div>
@@ -113,14 +130,16 @@ function render(data) {
 
     let removebtn = document.querySelectorAll('.remove')
     let donebtn = document.querySelectorAll('.done')
-    // let editbtn = document.querySelectorAll('.edit')
+    let editbtn = document.querySelectorAll('.edit')
 
     removebtn.forEach((element) => {
         element.onclick = () => removecard(element)
     })
     donebtn.forEach((element) => {
-        console.log(element)
         element.onclick = () => donecard(element);
+    });
+    editbtn.forEach((element) => {
+        element.onclick = () => adddata(element);
     });
     draganddrop()
 }
