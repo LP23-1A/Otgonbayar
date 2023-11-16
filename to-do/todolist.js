@@ -28,9 +28,7 @@ addbtn.onclick = none
 
 addtaskbtn.onclick = adddata
 
-
-
-function adddata(action,element) {
+function adddata(element,action) {
     if ("edit" === action) {
         const id =  element.parentElement.id
         for (let i = 0; i < data.length; i++) {
@@ -44,6 +42,7 @@ function adddata(action,element) {
             }
         }
         render(data)
+        console.log(data);
         none()
         return;
     }
