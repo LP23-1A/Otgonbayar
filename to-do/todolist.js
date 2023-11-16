@@ -11,6 +11,7 @@ let counttodo = document.querySelector('.counttodo')
 let countprogress = document.querySelector('.countprogress')
 let countstuck = document.querySelector('.countstuck')
 let countdone = document.querySelector('.countdone')
+
 function popup() {
     modal.style.display = "block"
 }
@@ -27,24 +28,7 @@ addbtn.onclick = none
 
 addtaskbtn.onclick = adddata
 
-function adddata(element) {
-    if (element === "edit") {
-        const id = el.id
-        for (let a = 0; a < data.length; a++) {
-            if (data[a].id === id) {
-                let title = document.getElementById('title').value
-                let description = document.getElementById('description').value
-                let status = document.getElementById('status').value
-                let priority = document.getElementById('priority').value
-                data[a].title = title
-                data[a].description = description
-                data[a].status = status
-                data[a].priority = priority
-            }
-        }
-        render(data)
-        return
-    }
+function adddata() {
     let title = document.getElementById('title').value
     let description = document.getElementById('description').value
     let status = document.getElementById('status').value
@@ -53,7 +37,7 @@ function adddata(element) {
     render(data)
     draganddrop()
 }
-console.log(adddata);
+
 const removecard = (el) => {
     const filterid = data.filter((item) => item.id !== el.id)
     data = filterid
@@ -63,11 +47,11 @@ const removecard = (el) => {
 const donecard = (el) => {
     data.map((item) => {
         if (item.id === el.id) {
-            item.status = "Done"
+            item.status = "Done";
         }
-    })
-    render(data)
-}
+    });
+    render(data);
+};
 
 function render(data) {
     let count = {
@@ -138,9 +122,6 @@ function render(data) {
     donebtn.forEach((element) => {
         element.onclick = () => donecard(element);
     });
-    editbtn.forEach((element) => {
-        element.onclick = () => adddata(element);
-    });
     draganddrop()
 }
 const cardtodo = document.querySelector('#cardtodo')
@@ -178,8 +159,21 @@ function draganddrop() {
         })
         board.addEventListener('dragleave', () => { });
         board.addEventListener('drop', (event) => {
-            event.preventDefault();
-
+        event.preventDefault();
+            let id = draggeditem.getAttribute("id")
+            data.map((el) => {
+                el.status = id
+                if (index === 0) {
+                    el.status = "todo";
+                  } else if (index === 1) {
+                    el.status = "inprogress";
+                  } else if (index === 2) {
+                    el.status = "Stuck";
+                  } else if (index === 3) {
+                    el.status = "Done";
+                  }
+            })
+            
         })
     })
 }
