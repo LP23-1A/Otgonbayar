@@ -43,7 +43,6 @@ const removecard = (el) => {
     data = filterid
     render(filterid)
 }
-
 const donecard = (el) => {
     data.map((item) => {
         if (item.id === el.id) {
@@ -59,7 +58,6 @@ const donecard = (el) => {
         done: 0,
     }
 function render(data) {
-
     const empty = document.querySelectorAll('.empty')
     empty[0].innerHTML = ""
     empty[1].innerHTML = ""
