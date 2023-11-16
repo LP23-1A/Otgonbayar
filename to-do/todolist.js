@@ -52,14 +52,14 @@ const donecard = (el) => {
     });
     render(data);
 };
-
-function render(data) {
     let count = {
         todo: 0,
         inprogress: 0,
         stuck: 0,
         done: 0,
     }
+function render(data) {
+
     const empty = document.querySelectorAll('.empty')
     empty[0].innerHTML = ""
     empty[1].innerHTML = ""
@@ -67,7 +67,7 @@ function render(data) {
     empty[3].innerHTML = ""
     data.map((el) => {
         const carddata = `
-        <div class="cardtext bg-white flex gap-12 justify-between" draggable="true">
+        <div class="cardtext bg-white flex gap-12 justify-between" draggable="true" id="${el.id}">
         <div class="done icon flex justify-center align-center grey-hover margin-top-5" id="${el.id}">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
@@ -114,7 +114,7 @@ function render(data) {
 
     let removebtn = document.querySelectorAll('.remove')
     let donebtn = document.querySelectorAll('.done')
-    let editbtn = document.querySelectorAll('.edit')
+    // let editbtn = document.querySelectorAll('.edit')
 
     removebtn.forEach((element) => {
         element.onclick = () => removecard(element)
@@ -144,7 +144,7 @@ function draganddrop() {
             draggeditem = null
         })
     })
-    boards.forEach((board) => {
+    boards.forEach((board, index) => {
         board.addEventListener('dragover', (event) => {
             event.preventDefault()
         })
@@ -161,19 +161,42 @@ function draganddrop() {
         board.addEventListener('drop', (event) => {
         event.preventDefault();
             let id = draggeditem.getAttribute("id")
-            data.map((el) => {
+            data.filter((el) => {
+                if (el.id === id) {
+                if (el.status === "todo") {
+                      count.todo -= 1;
+                } else if (el.status === "inprogress") {
+                      count.inprogress -= 1;
+                } else if (el.status === "Stuck") {
+                      count.stuck -= 1;
+                } else if (el.status === "Done") {
+                      count.done -= 1;
+                }
                 el.status = id
                 if (index === 0) {
                     el.status = "todo";
-                  } else if (index === 1) {
+                } else if (index === 1) {
                     el.status = "inprogress";
-                  } else if (index === 2) {
+                } else if (index === 2) {
                     el.status = "Stuck";
-                  } else if (index === 3) {
+                } else if (index === 3) {
                     el.status = "Done";
-                  }
+                }
+                  if (el.status === "todo") {
+                    count.todo += 1;
+                } else if (el.status === "inprogress") {
+                    count.inprogress += 1;
+                } else if (el.status === "Stuck") {
+                    count.stuck += 1;
+                } else if (el.status === "Done") {
+                    count.done += 1;
+                }
+                }
             })
-            
+            counttodo.innerHTML = count.todo
+            countprogress.innerHTML = count.inprogress
+            countstuck.innerHTML = count.stuck
+            countdone.innerHTML = count.done
         })
     })
 }
