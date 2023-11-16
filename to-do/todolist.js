@@ -28,7 +28,25 @@ addbtn.onclick = none
 
 addtaskbtn.onclick = adddata
 
-function adddata() {
+
+
+function adddata(action,element) {
+    if ("edit" === action) {
+        const id =  element.parentElement.id
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].id === id) {
+        let title = document.getElementById('title').value
+        let description = document.getElementById('description').value
+        let status = document.getElementById('status').value
+        data[i].title = title
+        data[i].description = description
+        data[i].status = status
+            }
+        }
+        render(data)
+        none()
+        return;
+    }
     let title = document.getElementById('title').value
     let description = document.getElementById('description').value
     let status = document.getElementById('status').value
@@ -37,7 +55,7 @@ function adddata() {
     render(data)
     draganddrop()
 }
-
+console.log(data);
 const removecard = (el) => {
     const filterid = data.filter((item) => item.id !== el.id)
     data = filterid
@@ -120,6 +138,13 @@ function render(data) {
     donebtn.forEach((element) => {
         element.onclick = () => donecard(element);
     })
+    editbtn.forEach((element) => {
+        element.onclick = () => edit(element, "edit");
+    })
+    function edit(element, action) {
+        popup();
+        addtaskbtn.onclick = () => adddata(element, action);
+      }
     draganddrop()
 }
 // const cardtodo = document.querySelector('#cardtodo')
