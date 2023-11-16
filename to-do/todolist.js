@@ -114,20 +114,20 @@ function render(data) {
 
     let removebtn = document.querySelectorAll('.remove')
     let donebtn = document.querySelectorAll('.done')
-    // let editbtn = document.querySelectorAll('.edit')
+    let editbtn = document.querySelectorAll('.edit')
 
     removebtn.forEach((element) => {
         element.onclick = () => removecard(element)
     })
     donebtn.forEach((element) => {
         element.onclick = () => donecard(element);
-    });
+    })
     draganddrop()
 }
-const cardtodo = document.querySelector('#cardtodo')
-const cardprogress = document.querySelector('#cardprogress')
-const cardstuck = document.querySelector('#cardstuck')
-const carddone = document.querySelector('#carddone')
+// const cardtodo = document.querySelector('#cardtodo')
+// const cardprogress = document.querySelector('#cardprogress')
+// const cardstuck = document.querySelector('#cardstuck')
+// const carddone = document.querySelector('#carddone')
 
 function draganddrop() {
     const boards = document.querySelectorAll(".card")
