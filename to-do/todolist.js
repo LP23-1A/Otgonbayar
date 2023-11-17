@@ -31,7 +31,6 @@ addtaskbtn.onclick = adddata
 function adddata(element, action) {
     if ("edit" === action) {
         const id = element.id
-        console.log(element);
         for (let i = 0; i < data.length; i++) {
             if (data[i].id === id) {
                 let title = document.getElementById('title').value
@@ -43,7 +42,6 @@ function adddata(element, action) {
             }
         }
         render(data)
-        console.log(data);
         none()
         return;
     }
@@ -53,9 +51,8 @@ function adddata(element, action) {
     let priority = document.getElementById('priority').value
     data.push({ title, description, status, priority, id: rmvid() })
     render(data)
-    draganddrop()
+    // draganddrop()
 }
-console.log(data);
 const removecard = (el) => {
     const filterid = data.filter((item) => item.id !== el.id)
     data = filterid
@@ -145,14 +142,14 @@ function render(data) {
         popup();
         addtaskbtn.onclick = () => adddata(element, action);
     }
-    draganddrop()
+    // draganddrop()
 }
 // const cardtodo = document.querySelector('#cardtodo')
 // const cardprogress = document.querySelector('#cardprogress')
 // const cardstuck = document.querySelector('#cardstuck')
 // const carddone = document.querySelector('#carddone')
 
-function draganddrop() {
+
     const boards = document.querySelectorAll(".card")
     const carddata = document.querySelectorAll(".empty")
     let draggeditem = null
@@ -176,51 +173,18 @@ function draganddrop() {
             if (draggeditem) {
                 const dragging = draggeditem.parentNode;
                 if (dragging !== event.currentTarget) {
-                    event.currentTarget.querySelector('.empty').appendChild(draggeditem);
+                   document.querySelectorAll('.empty')[index].appendChild(draggeditem);
                 }
             }
         })
         board.addEventListener('dragleave', () => { });
         board.addEventListener('drop', (event) => {
             event.preventDefault();
-            let id = draggeditem.getAttribute("id")
-            data.filter((el) => {
-                
-                // if (el.id === id) {
-                //     if (el.status === "todo") {
-                //         count.todo -= 1;
-                //     } else if (el.status === "inprogress") {
-                //         count.inprogress -= 1;
-                //     } else if (el.status === "Stuck") {
-                //         count.stuck -= 1;
-                //     } else if (el.status === "Done") {
-                //         count.done -= 1;
-                //     }
-                //     el.status = id
-                //     if (index === 0) {
-                //         el.status = "todo";
-                //     } else if (index === 1) {
-                //         el.status = "inprogress";
-                //     } else if (index === 2) {
-                //         el.status = "Stuck";
-                //     } else if (index === 3) {
-                //         el.status = "Done";
-                //     }
-                //     if (el.status === "todo") {
-                //         count.todo += 1;
-                //     } else if (el.status === "inprogress") {
-                //         count.inprogress += 1;
-                //     } else if (el.status === "Stuck") {
-                //         count.stuck += 1;
-                //     } else if (el.status === "Done") {
-                //         count.done += 1;
-                //     }
-                // }
-            })
-            // counttodo.innerHTML = count.todo
-            // countprogress.innerHTML = count.inprogress
-            // countstuck.innerHTML = count.stuck
-            // countdone.innerHTML = count.done
+            data.map((el) => {
+                if (el.id === draggeditem.id) {
+                  el.status = board.id;
+                }
+              });
+              render(data)
         })
     })
-}
