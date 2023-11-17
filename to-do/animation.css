@@ -10,7 +10,7 @@
     box-shadow: 0 0 0 10px #ebe59b,
     0 0 50px #FCF6BA,;
     animation: animate 15s linear infinite;
-    animation-duration: calc(400s / var(--i));
+    animation-duration: calc(300s / var(--i));
 }
 .tuya span:nth-child(even){
     background-color: #f1e990;

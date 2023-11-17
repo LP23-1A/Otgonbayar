@@ -28,17 +28,18 @@ addbtn.onclick = none
 
 addtaskbtn.onclick = adddata
 
-function adddata(element,action) {
+function adddata(element, action) {
     if ("edit" === action) {
-        const id =  element.parentElement.id
+        const id = element.id
+        console.log(element);
         for (let i = 0; i < data.length; i++) {
             if (data[i].id === id) {
-        let title = document.getElementById('title').value
-        let description = document.getElementById('description').value
-        let status = document.getElementById('status').value
-        data[i].title = title
-        data[i].description = description
-        data[i].status = status
+                let title = document.getElementById('title').value
+                let description = document.getElementById('description').value
+                let status = document.getElementById('status').value
+                data[i].title = title
+                data[i].description = description
+                data[i].status = status
             }
         }
         render(data)
@@ -68,12 +69,12 @@ const donecard = (el) => {
     });
     render(data);
 };
-    let count = {
-        todo: 0,
-        inprogress: 0,
-        stuck: 0,
-        done: 0,
-    }
+let count = {
+    todo: 0,
+    inprogress: 0,
+    stuck: 0,
+    done: 0,
+}
 function render(data) {
     const empty = document.querySelectorAll('.empty')
     empty[0].innerHTML = ""
@@ -143,7 +144,7 @@ function render(data) {
     function edit(element, action) {
         popup();
         addtaskbtn.onclick = () => adddata(element, action);
-      }
+    }
     draganddrop()
 }
 // const cardtodo = document.querySelector('#cardtodo')
@@ -181,44 +182,45 @@ function draganddrop() {
         })
         board.addEventListener('dragleave', () => { });
         board.addEventListener('drop', (event) => {
-        event.preventDefault();
+            event.preventDefault();
             let id = draggeditem.getAttribute("id")
             data.filter((el) => {
-                if (el.id === id) {
-                if (el.status === "todo") {
-                      count.todo -= 1;
-                } else if (el.status === "inprogress") {
-                      count.inprogress -= 1;
-                } else if (el.status === "Stuck") {
-                      count.stuck -= 1;
-                } else if (el.status === "Done") {
-                      count.done -= 1;
-                }
-                el.status = id
-                if (index === 0) {
-                    el.status = "todo";
-                } else if (index === 1) {
-                    el.status = "inprogress";
-                } else if (index === 2) {
-                    el.status = "Stuck";
-                } else if (index === 3) {
-                    el.status = "Done";
-                }
-                  if (el.status === "todo") {
-                    count.todo += 1;
-                } else if (el.status === "inprogress") {
-                    count.inprogress += 1;
-                } else if (el.status === "Stuck") {
-                    count.stuck += 1;
-                } else if (el.status === "Done") {
-                    count.done += 1;
-                }
-                }
+                
+                // if (el.id === id) {
+                //     if (el.status === "todo") {
+                //         count.todo -= 1;
+                //     } else if (el.status === "inprogress") {
+                //         count.inprogress -= 1;
+                //     } else if (el.status === "Stuck") {
+                //         count.stuck -= 1;
+                //     } else if (el.status === "Done") {
+                //         count.done -= 1;
+                //     }
+                //     el.status = id
+                //     if (index === 0) {
+                //         el.status = "todo";
+                //     } else if (index === 1) {
+                //         el.status = "inprogress";
+                //     } else if (index === 2) {
+                //         el.status = "Stuck";
+                //     } else if (index === 3) {
+                //         el.status = "Done";
+                //     }
+                //     if (el.status === "todo") {
+                //         count.todo += 1;
+                //     } else if (el.status === "inprogress") {
+                //         count.inprogress += 1;
+                //     } else if (el.status === "Stuck") {
+                //         count.stuck += 1;
+                //     } else if (el.status === "Done") {
+                //         count.done += 1;
+                //     }
+                // }
             })
-            counttodo.innerHTML = count.todo
-            countprogress.innerHTML = count.inprogress
-            countstuck.innerHTML = count.stuck
-            countdone.innerHTML = count.done
+            // counttodo.innerHTML = count.todo
+            // countprogress.innerHTML = count.inprogress
+            // countstuck.innerHTML = count.stuck
+            // countdone.innerHTML = count.done
         })
     })
 }
