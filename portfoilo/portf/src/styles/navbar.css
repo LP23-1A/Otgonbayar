@@ -1,0 +1,24 @@
+.navlist{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    gap: 25px;
+}
+.navbtn{
+    gap: 24px;
+}
+.changetheme{
+    border: none;
+    background: var(--gray-default, #FFF);
+}
+.downloadbtn{
+    width: 120px;
+    height: 45px;
+    color: white;
+    border-radius: 12px;
+    background-color: var(--gray-900, #111827);;
+}
+.navcontainer{
+    height: 65px;
+    background: var(--gray-default, #FFF);
+}
