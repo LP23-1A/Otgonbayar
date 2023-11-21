@@ -1,7 +1,20 @@
 .aboutcontainer{
     height: 700px;
 }
+.aboutmain{
+    margin-top: 48px;
+}
+.aboutleft{
+    width: 584px;
+}
 .aboutright{
     width: 584px;
     gap: 16px;
+}
+.aboutbg{
+    top: 30px;
+    right: 340px;
+}
+.aboutlist li{
+    list-style-type: circle;
 }

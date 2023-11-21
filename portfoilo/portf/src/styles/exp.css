@@ -1,0 +1,11 @@
+.exp{
+    width: 872px;
+    height: 220px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06),0px 4px 3px 0px rgba(0, 0, 0, 0.07);
+}
+.exptop{
+    height: 240px;
+    margin-top: 48px;
+}
