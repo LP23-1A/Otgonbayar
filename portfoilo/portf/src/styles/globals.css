@@ -11,8 +11,23 @@
 .container{
   width: 1280px;
 }
+.column{
+  flex-direction: column;
+}
+.po-rela{
+  position: relative;
+}
+.po-abs{
+  position: absolute;
+}
+.m-top-96{
+  margin-top: 96px;
+}
 .gap24{
   gap: 24px;
+}
+.gap48{
+  gap: 48px;
 }
 .flex{
   display: flex;

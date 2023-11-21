@@ -2,3 +2,23 @@
     font-size: 60px;
     color: var(--gray-900, #111827);
 }
+.w-770{
+    width: 770px;
+}
+.introprofile{
+    position: relative;
+    width: 280px;
+    height: 320px;
+}
+.introright{
+    position: relative;
+    width: 400px;
+    height: 360px;
+}
+.introbg{
+    position: absolute;
+    top:50px;
+    right: 30px;
+    width: 280px;
+    height: 320px;
+}
