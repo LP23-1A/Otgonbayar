@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Work from "@/components/Work";
+import Footer from "@/components/Footer";
 
 export default function Portf() {
   return(
@@ -15,6 +16,7 @@ export default function Portf() {
         <Skills/>
         <Experience/>
         <Work/>
+        <Footer/>
       </div>
     </div>
   )

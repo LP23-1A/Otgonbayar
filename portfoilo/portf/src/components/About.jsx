@@ -5,7 +5,11 @@ export default function About() {
     return(
         <section className="aboutcontainer m-top-96">
             <div className="flex justify-center">
-                <button className="btngray">About me</button>
+                <button className="btngray">
+                    <p className="p-20">
+                       About me 
+                    </p>
+                </button>
             </div>
             <div className="aboutmain flex justify-around">
                 <div className="aboutleft po-rela">

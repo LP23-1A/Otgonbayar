@@ -5,7 +5,9 @@ export default function Skill() {
         <section className="skillscontainer m-top-96 flex column justify-center bg-white">
             <div className="flex column gap10">
                 <div className="flex justify-center">
-                 <button className="btngray">Skills</button>   
+                    <button className="btngray">
+                        <p className="p-20">Skills</p>
+                    </button>   
                 </div>
                 <p className="flex justify-center">The skills, tools and technologies I am really good at:</p>
             </div>

@@ -1,3 +1,6 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 *{
   margin: 0;
 }
@@ -26,6 +29,9 @@
 .po-abs{
   position: absolute;
 }
+h3{
+  font-size: 36px;
+}
 h5{
   font-size: 30px;
 }
@@ -33,7 +39,17 @@ h6{
   font-size: 20px;
 }
 p{
-  color: var(--gray-600, #4B5563);;
+  color: var(--gray-600, #4B5563);
+  line-height: 24px;
+}
+.p-20{
+  padding: 0px 20px 0px 20px;
+}
+.p-28{
+  padding: 28px;
+}
+.p-48{
+  padding: 48px;
 }
 .bg-white{
   background-color: white;
@@ -41,8 +57,17 @@ p{
 .bg-gray{
   background: var(--gray-50, #F9FAFB);
 }
+.b-radius12{
+  border-radius: 12px;
+}
+.border-none{
+  border: none;
+}
 .m-top-96{
   margin-top: 96px;
+}
+.m-bottom-96{
+  margin-bottom: 96px;
 }
 .gap16{
   gap: 16px;
@@ -82,7 +107,6 @@ p{
   color: Gray/600;
 }
 .btngray{
-  width: 100px;
   height: 25px;
   border-radius: 12px;
   background: var(--gray-200, #E5E7EB);

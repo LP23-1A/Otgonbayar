@@ -5,7 +5,9 @@ export default function Experience() {
         <section className="experiencecontainer m-top-96 flex column justify-center">
             <div className="flex column gap10">
                 <div className="flex justify-center">
-                    <button className="btngray">Experience</button>
+                    <button className="btngray">
+                        <p className="p-20">Experience</p>
+                    </button>
                 </div>
                 <p className="flex justify-center">Here is a quick summary of my most recent experiences:</p>
             </div>
