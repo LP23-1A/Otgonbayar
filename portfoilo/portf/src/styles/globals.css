@@ -1,20 +1,11 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 *{
   margin: 0;
 }
 .container{
   width: 1280px;
-}
-h3{
-  font-size: 36px;
-}
-h5{
-  font-size: 30px;
-}
-h6{
-  font-size: 20px;
 }
 p{
   color: var(--gray-600, #4B5563);
@@ -34,12 +25,6 @@ p{
 }
 .bg-gray{
   background: var(--gray-50, #F9FAFB);
-}
-.m-top-96{
-  margin-top: 96px;
-}
-.m-bottom-96{
-  margin-bottom: 96px;
 }
 .w-64{
   width: 64px;

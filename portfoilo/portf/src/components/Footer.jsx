@@ -5,7 +5,7 @@ import Btnicons from "@/components/icons/Btnicons";
 
 export default function Footer() {
     return(
-        <section className="footersection flex flex-col m-top-96 gap-[26px] m-bottom-96">
+        <section className="footersection flex flex-col my-[96px] gap-[26px] m-bottom-96">
             <div className="flex flex-col gap-[10px]">
                 <div className="flex justify-center">
                     <button className="btngray">
@@ -19,7 +19,7 @@ export default function Footer() {
                 <div>
                     <MailIcon/>
                 </div>
-                <div><h3>reachsagarshah@gmail.com</h3></div>
+                <div><h3 className="text-[36px]">reachsagarshah@gmail.com</h3></div>
                 <div>
                     <CopyIcon/>
                 </div>
@@ -28,7 +28,7 @@ export default function Footer() {
                 <div>
                     <PhoneIcon/>
                 </div>
-                <div><h3>+91 8980500565</h3></div>
+                <div><h3 className="text-[36px]">+91 8980500565</h3></div>
                 <div>
                     <CopyIcon/>
                 </div>
