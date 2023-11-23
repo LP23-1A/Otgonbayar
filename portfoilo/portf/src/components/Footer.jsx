@@ -1,12 +1,12 @@
-import MailIcon from "@/components/MailICON";
-import CopyIcon from "@/components/CopyICON";
-import PhoneIcon from "@/components/PhoneICON";
-import Btnicons from "@/components/Btnicons";
+import MailIcon from "@/components/icons/MailICON";
+import CopyIcon from "@/components/icons/CopyICON";
+import PhoneIcon from "@/components/icons/PhoneICON";
+import Btnicons from "@/components/icons/Btnicons";
 
 export default function Footer() {
     return(
-        <section className="footersection flex column m-top-96 gap48 m-bottom-96">
-            <div className="flex column gap10">
+        <section className="footersection flex flex-col m-top-96 gap-[26px] m-bottom-96">
+            <div className="flex flex-col gap-[10px]">
                 <div className="flex justify-center">
                     <button className="btngray">
                         <p className="p-20">Get in touch</p>
@@ -14,8 +14,8 @@ export default function Footer() {
                 </div>
                 <p className="flex justify-center">What’s next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect.</p>
             </div>
-            <div className="flex gap10 column">
-            <div className="flex gap16 align-center justify-center">
+            <div className="flex gap-[10px] flex-col">
+            <div className="flex gap-[16px] items-center justify-center">
                 <div>
                     <MailIcon/>
                 </div>
@@ -24,7 +24,7 @@ export default function Footer() {
                     <CopyIcon/>
                 </div>
             </div>
-            <div className="flex gap16 align-center justify-center">
+            <div className="flex gap-[16px] items-center justify-center">
                 <div>
                     <PhoneIcon/>
                 </div>
@@ -34,7 +34,7 @@ export default function Footer() {
                 </div>
             </div>
             </div>
-            <div className="flex justify-center column align-center gap10">
+            <div className="flex justify-center flex-col items-center gap-[10px]">
                 <p>You may also find me on these platforms!</p>
                 <div>
                     <Btnicons/>

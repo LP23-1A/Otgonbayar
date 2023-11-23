@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export default function Portf() {
   return(
-    <div className="body">
+    <div className="body w-full flex flex-col items-center justify-center">
       <div className="container">
         <Navbar/>
         <Introduction/>

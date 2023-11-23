@@ -6,17 +6,18 @@
     width: 770px;
 }
 .introprofile{
-    position: relative;
     width: 280px;
     height: 320px;
 }
 .introright{
-    position: relative;
     width: 400px;
     height: 360px;
 }
+.activeicon{
+    width: 24px;
+    height: 24px;
+}
 .introbg{
-    position: absolute;
     top:50px;
     right: 30px;
     width: 280px;

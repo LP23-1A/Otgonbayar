@@ -71,7 +71,7 @@ export default function Skillicons() {
         return (
           <div className="skillicons">
             <img className="w-64 h-64" src={el.icon} alt="" />
-            <p className="text-align-center">{el.title}</p>
+            <p className="text-center">{el.title}</p>
           </div>
         );
       })}

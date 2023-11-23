@@ -1,4 +1,5 @@
 .workmain{
+    width: 1152px;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
 }
 .workleft{
@@ -10,10 +11,9 @@
     width: 576px;
 }
 .workimg{
-    width: 480px;
-    height: 384px;
+    width: 575px;
+    height: 479px;
 }
 .catbtns{
     width: 500px;
-    flex-wrap: wrap;
 }
