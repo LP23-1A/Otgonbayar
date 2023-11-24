@@ -37,7 +37,7 @@ export default function Skillicons() {
         return (
             <div>
                 <button className="btngray">
-                    <p className="p-20">{el.name}</p>
+                    <p className="px-5">{el.name}</p>
                 </button>
             </div>
         );

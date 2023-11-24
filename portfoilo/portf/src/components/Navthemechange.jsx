@@ -1,5 +1,6 @@
 export default function NavThemeChange() {
     return(
+            <button className="changetheme fles justify-center text-center">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M12 2V4" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -11,5 +12,6 @@ export default function NavThemeChange() {
         <path d="M6.33993 17.66L4.92993 19.07" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M19.0699 4.92999L17.6599 6.33999" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
+            </button>
     )
 }

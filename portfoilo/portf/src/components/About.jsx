@@ -6,7 +6,7 @@ export default function About() {
         <section className="aboutcontainer my-[96px]">
             <div className="flex justify-center">
                 <button className="btngray">
-                    <p className="p-20">
+                    <p className="px-5">
                        About me 
                     </p>
                 </button>

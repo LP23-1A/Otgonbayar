@@ -9,7 +9,7 @@ export default function Work() {
             <div className="flex flex-col gap-[10px]">
                 <div className="flex justify-center">
                     <button className="btngray">
-                        <p className="p-20">Work</p>
+                        <p className="px-5">Work</p>
                     </button>  
                 </div>
                 <p className="flex justify-center">Some of the noteworthy projects I have built:</p>

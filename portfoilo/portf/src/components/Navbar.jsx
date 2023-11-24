@@ -1,7 +1,7 @@
 import NavLogo from "@/components/icons/Navlogo";
 import NavThemeChange from "@/components/Navthemechange";
 
-export default function Navbar() {
+export default function Navbar({Darktheme}) {
     return(
         <section className="navcontainer w-1216 flex justify-between items-center">
                 <div>
@@ -17,13 +17,12 @@ export default function Navbar() {
                         <li>Contact</li>
                     </div>
                     <div className="navbtn flex">
-                        <button className="changetheme flex justify-center items-center">
+                        <button onClick={Darktheme}>
                             <NavThemeChange/>
                         </button>
                         <button className="downloadbtn">Download CV</button>
                     </div>
                 </div>
         </section>
-
     )
 }

@@ -6,7 +6,7 @@ export default function Experience() {
             <div className="flex flex-col gap-y-5">
                 <div className="flex justify-center">
                     <button className="btngray">
-                        <p className="p-20">Experience</p>
+                        <p className="px-5">Experience</p>
                     </button>
                 </div>
                 <p className="flex justify-center">Here is a quick summary of my most recent experiences:</p>

@@ -6,7 +6,7 @@ export default function Skill() {
             <div className="flex flex-col gap-[10px]">
                 <div className="flex justify-center">
                     <button className="btngray">
-                        <p className="p-20">Skills</p>
+                        <p className="px-5">Skills</p>
                     </button>   
                 </div>
                 <p className="flex justify-center">The skills, tools and technologies I am really good at:</p>

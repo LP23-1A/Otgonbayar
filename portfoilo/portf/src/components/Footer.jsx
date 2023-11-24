@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="flex flex-col gap-[10px]">
                 <div className="flex justify-center">
                     <button className="btngray">
-                        <p className="p-20">Get in touch</p>
+                        <p className="px-5">Get in touch</p>
                     </button>  
                 </div>
                 <p className="flex justify-center">What’s next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect.</p>
