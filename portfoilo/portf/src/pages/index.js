@@ -16,12 +16,12 @@ export default function Portf() {
     <div className={`body w-full flex flex-col items-center justify-center" ${isDark && 'bg-black'} `} >
       <div className="container">
         <Navbar Darktheme={Darktheme} isDark={isDark}/>
-        <Introduction/>
+        {/* <Introduction/>
         <About/>
         <Skills/>
         <Experience/>
         <Work/>
-        <Footer/>
+        <Footer/> */}
       </div>
     </div>
   )
