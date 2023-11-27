@@ -2,7 +2,8 @@ import upwork from "../../public/logo-upwork.png";
 
 export default function Info() {
     return(
-        <div className="exptop flex justify-center">
+        <section className="expmain">
+                    <div className="exptop flex justify-center">
         <div className="exp flex justify-between">
             <div>
                 <img src={upwork.src} alt="" />
@@ -16,10 +17,11 @@ export default function Info() {
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
             </ul>
         </div>
-        <div>
+        <div className="years">
             <p>Nov 2021 - Present</p>
         </div>
     </div>
     </div>
+        </section>
     )
 }
