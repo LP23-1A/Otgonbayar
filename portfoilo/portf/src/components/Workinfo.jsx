@@ -4,7 +4,7 @@ import workbg from "../../public/work.png";
 
 export default function Workinfo() {
     return(
-        <div className="workmain flex">
+        <div className="workmain flex justify-center">
         <div className="workleft rounded-xl">
             <img className="workimg p-48 rounded-xl" src={workbg.src} alt="" />
         </div>

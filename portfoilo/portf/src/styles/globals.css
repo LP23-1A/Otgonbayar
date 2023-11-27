@@ -37,3 +37,19 @@ p{
   border: none;
   color: Gray/600;
 }
+.black-theme{
+  .navcontainer{
+    color: white;
+    background: var(--gray-dark-default, #030712);
+  }
+  .downloadbtn{
+    width: 120px;
+    height: 45px;
+    color: #030712;
+    background: var(--gray-dark-900, #F9FAFB);
+  }
+  .introcontainer{
+    color: white;
+    background: var(--gray-dark-default, #030712);
+  }
+}

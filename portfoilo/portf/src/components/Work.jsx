@@ -14,8 +14,9 @@ export default function Work() {
                 </div>
                 <p className="flex justify-center">Some of the noteworthy projects I have built:</p>
             </div>
+            <div className="w-full flex flex-col justify-center gap-[40px]">
                 <Workinfo/>
-            <div className="workmain flex">
+            <div className="workmain flex justify-center">
                 <div className="workright flex flex-col gap-[24px] p-48 rounded-xl">
                     <h6 className="text-[20px]">Fiskil</h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
@@ -31,6 +32,7 @@ export default function Work() {
                 </div>
             </div>
                 <Workinfo/>
+            </div>
         </section>
     )
 }

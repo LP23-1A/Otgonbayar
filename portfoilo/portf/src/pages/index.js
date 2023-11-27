@@ -13,15 +13,15 @@ export default function Portf() {
       setIsDark(!isDark)
     }
   return(
-    <div className={`body w-full flex flex-col items-center justify-center" ${isDark && 'bg-black'} `} >
-      <div className="container">
+    <div className={`body w-full flex flex-col items-center justify-center" ${isDark && `black-theme`}`} >
+      <div className={`"container" ${isDark && `bg-black`}`}>
         <Navbar Darktheme={Darktheme} isDark={isDark}/>
-        {/* <Introduction/>
+        <Introduction/>
         <About/>
         <Skills/>
         <Experience/>
         <Work/>
-        <Footer/> */}
+        <Footer/>
       </div>
     </div>
   )
