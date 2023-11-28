@@ -5,7 +5,7 @@ import Btnicons from "@/components/icons/Btnicons";
 
 export default function Footer() {
     return(
-        <section className="footersection flex flex-col my-[96px] gap-[26px] m-bottom-96">
+        <section className="footersection flex flex-col py-[96px] px-[80px] gap-[26px] m-bottom-96">
             <div className="flex flex-col gap-[10px]">
                 <div className="flex justify-center">
                     <button className="btngray">

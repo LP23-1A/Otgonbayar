@@ -6,7 +6,7 @@ import IntroIMGbg from "@/components/IntroIMGbg";
 
 export default function Introduction() {
     return(
-        <section className="introcontainer flex justify-between my-[96px] bg-white">
+        <section className="introcontainer flex justify-between py-[96px] px-[80px] bg-white max-md:flex-col-reverse max-md:p-0 max-md:justify-center max-md:flex">
             <div className="introleft w-770 flex flex-col gap-[48px]">
                 <div>
                     <div className="introtop flex items-center">

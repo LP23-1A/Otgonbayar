@@ -3,7 +3,7 @@ import aboutbg from "../../public/Background.png";
 
 export default function About() {
     return(
-        <section className="aboutcontainer my-[96px]">
+        <section className="aboutcontainer py-[96px] px-[80px] max-md:flex-col p-0 ">
             <div className="flex justify-center">
                 <button className="btngray">
                     <p className="px-5">

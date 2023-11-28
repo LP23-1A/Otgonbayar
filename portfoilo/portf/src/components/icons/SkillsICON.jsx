@@ -70,7 +70,7 @@ export default function Skillicons() {
         {data.map((el) => {
         return (
           <div className="skillicons">
-            <img className="w-64 h-64" src={el.icon} alt="" />
+            <img className="w-[64px] h-[64px]" src={el.icon} alt="" />
             <p className="text-center">{el.title}</p>
           </div>
         );

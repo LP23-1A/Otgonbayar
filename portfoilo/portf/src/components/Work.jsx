@@ -5,7 +5,7 @@ import Workinfo from "@/components/Workinfo";
 
 export default function Work() {
     return(
-        <section className="workcontainer my-[96px] flex flex-col gap-[48px]">
+        <section className="workcontainer py-[96px] px-[80px] flex flex-col gap-[48px]">
             <div className="flex flex-col gap-[10px]">
                 <div className="flex justify-center">
                     <button className="btngray">
@@ -17,7 +17,7 @@ export default function Work() {
             <div className="w-full flex flex-col justify-center gap-[40px]">
                 <Workinfo/>
             <div className="workmain flex justify-center">
-                <div className="workright flex flex-col gap-[24px] p-48 rounded-xl">
+                <div className="workright flex flex-col gap-[24px] p-[48px] rounded-xl">
                     <h6 className="text-[20px]">Fiskil</h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
                     <div className="catbtns flex gap-[16px] flex-wrap">
@@ -28,7 +28,7 @@ export default function Work() {
                     </div>
                 </div>
                 <div className="workleft rounded-xl">
-                    <img className="workimg p-48 rounded-xl" src={workbg.src} alt="" />
+                    <img className="workimg p-[48px] rounded-xl" src={workbg.src} alt="" />
                 </div>
             </div>
                 <Workinfo/>

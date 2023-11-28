@@ -4,28 +4,15 @@
 *{
   margin: 0;
 }
-.container{
-  width: 1280px;
-}
 p{
   color: var(--gray-600, #4B5563);
   line-height: 24px;
-}
-.p-28{
-  padding: 28px;
-}
-.p-48{
-  padding: 48px;
 }
 .bg-white{
   background-color: white;
 }
 .bg-gray{
   background: var(--gray-50, #F9FAFB);
-}
-.w-64{
-  width: 64px;
-  height: 64px;
 }
 .gray600{
   color: Gray/600;

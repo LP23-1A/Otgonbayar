@@ -1,9 +1,4 @@
-.skillscontainer{
-    width: 1280px;
-    height: 368px;
-}
 .technoicons {
     margin-top: 48px;
-    width: 100%;
-    gap: 90px;
+    gap: 70px;
 }

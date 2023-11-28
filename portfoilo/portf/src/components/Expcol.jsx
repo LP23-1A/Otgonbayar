@@ -3,7 +3,7 @@ import upwork from "../../public/logo-upwork.png";
 export default function Info() {
     return(
         <section className="expmain">
-                    <div className="exptop flex justify-center">
+            <div className="exptop flex justify-center">
         <div className="exp flex justify-between">
             <div>
                 <img src={upwork.src} alt="" />
