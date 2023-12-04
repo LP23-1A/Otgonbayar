@@ -4,4 +4,4 @@ const trendingdata = [
       category: "Technology",
       text: "The Impact of Technology on the Workplace: How Technology is Changing"
     },
-  ]
+]
