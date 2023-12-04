@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
+import Trending from "@/components/Trending";
 
 export default function Home() {
   return (
-    <div className="body w-[100%]">
-      <div className="container flex justify-center">
+    <div className="flex flex-col justify-center items-center">
         <Navbar/>
-      </div>
+        <Trending/>
     </div>
   )
 }
