@@ -11,7 +11,7 @@ export default function About() {
                     </p>
                 </button>
             </div>
-            <div className="aboutmain flex justify-around">
+            <div className="aboutmain flex justify-around max-md:flex-col max-md:justify-center">
                 <div className="aboutleft relative">
                     <img  className="aboutbg absolute" src={aboutbg.src} alt="" />
                     <img className="relative" src={aboutimg.src} alt="" />
