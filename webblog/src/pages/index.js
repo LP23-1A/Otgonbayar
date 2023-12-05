@@ -5,7 +5,7 @@ import Trending from "@/components/Trending";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center px-[]">
+    <div className="flex flex-col justify-center items-center gap-[100px]">
         <Navbar/>
         <Trending/>
         <AllBlog/>
