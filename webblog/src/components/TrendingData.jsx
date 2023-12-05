@@ -5,3 +5,15 @@ const trendingdata = [
       text: "The Impact of Technology on the Workplace: How Technology is Changing"
     },
 ]
+
+const trending = () => {
+  return(
+    trendingdata.map((props) => {
+      return(
+        <div>
+          
+        </div>
+      )
+    })
+  )
+}

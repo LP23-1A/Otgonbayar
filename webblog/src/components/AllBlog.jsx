@@ -7,7 +7,7 @@ export default function AllBlog() {
                 <div>
                     <h6 className="text-[24px]">All Blog Post</h6>
                 </div>
-                <div>
+                <div className="flex items-center justify-between">
                     <ul className="flex gap-[20px]">
                         <li className="text-[12px] text-[#D4A373]">All</li>
                         <li className="text-[12px]">Design</li>
@@ -16,6 +16,7 @@ export default function AllBlog() {
                         <li className="text-[12px]">Technology</li>
                         <li className="text-[12px]">Branding</li>
                     </ul>
+                    <button>View All</button>
                 </div>
             </div>
             <div>
