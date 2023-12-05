@@ -6,7 +6,8 @@ import Twitter from "@/utils/Twitter";
 
 export default function Footer() {
     return(
-        <section className="w-[1240px] py-[64px] flex flex-col gap-[25px] bg-[#E8E8EA]">
+        <div className="bg-[#E8E8EA] flex items-center justify-center w-[100vw]">
+<section className="w-[1240px]  py-[64px] flex flex-col gap-[25px] ">
             <div className="flex gap-[20px]">
                 <div className="w-[290px] flex flex-col gap-[24px]">
                     <div className="flex flex-col gap-[12px]">
@@ -57,5 +58,7 @@ export default function Footer() {
                 </div>
             </div>
         </section>
+        </div>
+        
     )
 }
