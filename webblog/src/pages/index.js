@@ -10,6 +10,9 @@ export default function Home() {
         <Navbar/>
         <Trending/>
         <AllBlog/>
+        <div>
+          <button className="flex items-center border-solid border-2 border-[#a3a4a9] rounded-[12px] py-[12px] px-[20px] ">Read More</button>
+        </div>
         <Footer/>
     </div>
   )

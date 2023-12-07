@@ -2,42 +2,34 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 let api = "https://dev.to/api/articles?username=gereltuyamz";
 
-// const data = [
-//     {
-//         img: "https://s3-alpha-sig.figma.com/img/3abf/26dd/585632b9d05dcfd0daffacedd55842f5?Expires=1702857600&Signature=GtIcIcyrku03di6uhi0mfVSqHwIdIsUNoUQebv4ln3q84G9ZINAh~g63In7v1hCCoAUoAP2aTUyCsm0UHjL-VzZqeJwqljXEBvlG38XfWgPV0jOZS41GSMMySeIgQ-5a6beEdkq3-nVqA8DtYQ5tFNSBjsKIZZlJohL6yXlNmptCXdFuApfCK6nWzmbfiNgeW-g3FK0QgNJNPlJaJFhYBW7ic31MDvl416i18XVjJb3BD8ahSb1F7OqOffjqQOGVpbAL4r4vPSLE8tV4YbaMpt1sknJsMh0hxR4lDqQ0txf88uFFFPq7xf9FpZyaEIntEtG8EVMtjjmahArIWExyCw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
-//         category: "Technology",
-//         title: "The Impact of Technology on the Workplace: How Technology is Changing",
-//         date: "August 20, 2022",
-//     },
-// ]
-
 const AllBlog = () => {
     const [data, setData] = useState([]);
     const get = async() => {
-        let response = axios.get(api)
-        setData(response)
-        console.log(response);
+        let response = await axios.get(api)
+    
+        setData(response.data)
+        console.log(response.data);
     }
     useEffect(() =>{
         get()
     },[])
 
     return (
-        <div className="w-[392px] h-[476px] rounded-xl border-2 p-[16px]">
+        <div className="w-[1240px] flex flex-wrap justify-between gap-[20px]">
             {
                 data.map((props) => {
                     return (
-                        <div className="flex flex-col gap-[16px] "> 
+                        <div className="flex flex-col gap-[16px] w-[392px] h-[476px] rounded-xl border-2 p-[16px] "> 
                             <div>
-                                <img className="rounded-lg bg-cover" src={props.img} alt="" /> 
+                                <img className="rounded-lg bg-cover w-[360px] h-[240px]" src={props.social_image} alt="" /> 
                             </div>
                             <div className="flex flex-col gap-[20px]">
                                 <div className="flex flex-col gap-[16px]">
-                                    <button className="w-fit p-1 px-3 text-indigo-500 bg-indigo-50 rounded-xl">{props.category}</button>
+                                    <button className="w-fit p-1 px-3 text-indigo-500 bg-indigo-50 rounded-xl">{props.tag_list}</button>
                                     <p className="text-[24px] ">{props.title}</p> 
                                 </div>
                                 <div>
-                                    <p className="text-gray-500">{props.date}</p> 
+                                    <p className="text-gray-500">{props.readable_publish_date}</p> 
                                 </div>
                             </div>
                         </div>

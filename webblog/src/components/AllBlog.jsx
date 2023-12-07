@@ -8,14 +8,14 @@ export default function AllBlog() {
                     <h6 className="text-[24px]">All Blog Post</h6>
                 </div>
                 <div className="flex items-center justify-between">
-                    <ul className="flex gap-[20px] text-[12px]">
-                        <li className="text-[#D4A373]">All</li>
-                        <li>Design</li>
-                        <li>Travel</li>
-                        <li>Fashion</li>
-                        <li>Technology</li>
-                        <li>Branding</li>
-                    </ul>
+                    <div className="flex gap-[20px] text-[12px]">
+                        <button className="hover:text-[#D4A373]">All</button>
+                        <button className="hover:text-[#D4A373]">Design</button>
+                        <button className="hover:text-[#D4A373]">Travel</button>
+                        <button className="hover:text-[#D4A373]">Fashion</button>
+                        <button className="hover:text-[#D4A373]">Technology</button>
+                        <button className="hover:text-[#D4A373]">Branding</button>
+                    </div>
                     <button>View All</button>
                 </div>
             </div>
