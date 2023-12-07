@@ -22,6 +22,9 @@ export default function AllBlog() {
             <div>
                 <BlogCard/>
             </div>
+            <div className="flex justify-center">
+                <button className="flex items-center border-solid border-2 border-[#a3a4a9] rounded-[12px] py-[12px] px-[20px] text-[#696A75]">Read More</button>
+            </div>
         </section>
     )   
 }

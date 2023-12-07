@@ -37,7 +37,6 @@ export default function Footer() {
                     <Linkedin/>
                 </div>
                 </div>
-                    <hr className="bg-black" />
                 <div className="flex items-center justify-between">
                     <div className="flex gap-[10px]">
                         <div>
