@@ -37,7 +37,7 @@ export default function Footer() {
                     <Linkedin/>
                 </div>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between py-[25px] border-4 border-t-[#DCDDDF]">
                     <div className="flex gap-[10px]">
                         <div>
                             <BICON/>
