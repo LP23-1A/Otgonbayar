@@ -1,8 +1,8 @@
-import AllBlog from "@/components/AllBlog";
 import Carsoule from "@/components/Carsoule";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Trending from "@/components/Trending";
+import AllBlogCard from "@/components/AllBlogCard";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <Navbar/>
         <Carsoule/>
         <Trending/>
-        <AllBlog/>
+        <AllBlogCard/>
         <Footer/>
     </div>
   )
