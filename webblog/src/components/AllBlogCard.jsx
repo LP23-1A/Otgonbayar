@@ -13,7 +13,7 @@ const AllBlog = () => {
         console.log(response.data)
     }
 
-    const [firstData, setFirstData] = useState(6)
+    const [firstData, setFirstData] = useState(9)
 
     const ReadMore = () =>{
         setFirstData((adddata) => adddata + 3 )
