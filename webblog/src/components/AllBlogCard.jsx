@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useRef, useState } from "react";
 let api = "https://dev.to/api/articles";
+import Link from "next/link";
 
 const AllBlog = () => {
     const [data, setData] = useState([])
@@ -46,6 +47,7 @@ const AllBlog = () => {
             {
                 data.slice(0, firstData).map((props) => {
                     return (
+                        <Link href={`/Blog/${props.id}`}>
                         <div className="flex flex-col gap-[16px] w-[392px] h-[476px] rounded-xl border-2 p-[16px] "> 
                             <div>
                                 <img className="rounded-lg bg-cover w-[360px] h-[240px]" src={props.cover_image} alt="" /> 
@@ -60,6 +62,7 @@ const AllBlog = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     )
                 })
             }
