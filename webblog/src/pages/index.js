@@ -6,7 +6,7 @@ import AllBlogCard from "@/components/AllBlogCard";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center gap-[100px]">
+    <div className="w-[1240px] flex flex-col m-auto items-center gap-[100px]">
         <Navbar/>
         <Carsoule/>
         <Trending/>

@@ -1,5 +1,5 @@
-import user from "../../public/Image.png";
 
+import user from "../../public/Image.png";
 export default function Detail() {
     return(
         <section className="flex flex-col gap-[32px] w-[800px] mt-[100px] mb-[80px]">

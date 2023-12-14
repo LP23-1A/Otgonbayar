@@ -26,7 +26,7 @@ const AllBlog = () => {
     },[])
 
     return (
-        <section className="w-[1240px] flex flex-col gap-[32px] mt-">
+        <section className="w-full flex flex-col gap-[32px] ">
         <div className="flex flex-col gap-[32px]">
             <div>
                 <h6 className="text-[24px]">All Blog Post</h6>
@@ -43,7 +43,7 @@ const AllBlog = () => {
                 <button>View All</button>
             </div> 
         </div>
-        <div className="w-[1240px] flex flex-wrap justify-between gap-[20px]">
+        <div className=" flex flex-wrap justify-between gap-[20px]">
             {
                 data.slice(0, firstData).map((props) => {
                     return (
@@ -54,7 +54,7 @@ const AllBlog = () => {
                             </div>
                             <div className="flex flex-col gap-[20px]">
                                 <div className="flex flex-col gap-[16px]">
-                                    <button className="w-fit p-1 px-3 text-indigo-500 bg-indigo-50 rounded-xl">{props.tag_list}</button>
+                                    <button className="w-fit p-1 px-3 text-indigo-500 bg-indigo-50 rounded-xl">{props.tags}</button>
                                     <p className="text-[24px] ">{props.title}</p> 
                                 </div>
                                 <div>

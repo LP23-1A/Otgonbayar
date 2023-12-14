@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export default function BlogPage() {
     return(
-        <section className="flex flex-col justify-center items-center gap-[100px]">
+        <section className="w-[1240px] m-auto flex flex-col justify-center items-center gap-[100px]">
             <Navbar/>
                 <div className="w-[769px] flex flex-col justify-center items-center">
                     <div className="flex flex-col gap-[20px]">

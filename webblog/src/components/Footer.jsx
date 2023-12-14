@@ -7,7 +7,7 @@ import Twitter from "@/utils/Twitter";
 export default function Footer() {
     return(
         <section className="bg-[#E8E8EA] flex items-center justify-center w-[100vw]">
-            <div className="w-[1240px]  py-[64px] flex flex-col gap-[25px] ">
+            <div className="  py-[64px] flex flex-col gap-[25px] ">
                 <div className="flex gap-[20px]">
                     <div className="w-[290px] flex flex-col gap-[24px]">
                         <div className="flex flex-col gap-[12px]">
@@ -23,7 +23,7 @@ export default function Footer() {
                             <p>Phone : 880 123 456 789</p>
                         </div>
                     </div>
-                    <div className="w-[560px] flex justify-center">
+                    <div className="w-[500px] flex justify-center">
                         <ul className="flex flex-col gap-[8px] text-[#3B3C4A]">
                             <li>Home </li>
                             <li>Blog</li>

@@ -4,7 +4,7 @@ import AllBlogCard from "@/components/AllBlogCard";
 
 export default function BlogPage() {
     return(
-        <section className="flex flex-col justify-center items-center gap-[100px]">
+        <section className="w-[1240px] m-auto flex flex-col justify-center items-center gap-[100px]">
             <Navbar/>
             <AllBlogCard/>
             <Footer/>

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Nav() {
     return(
-        <section className="flex w-[1240px] items-center justify-between py-[32px]">
+        <section className="w-full flex items-center justify-between py-[32px]">
             <MetaLogo/>
             <div className="flex gap-[40px]">
                 <Link href="/">Home</Link>
