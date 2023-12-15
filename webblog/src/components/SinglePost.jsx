@@ -1,4 +1,3 @@
-
 import user from "../../public/Image.png";
 export default function Detail() {
     return(
