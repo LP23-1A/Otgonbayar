@@ -22,7 +22,7 @@ export default function Carsoule() {
     }
 
     return(
-        <section className="h-[900px]">
+        <section className="max-sm:hidden h-[900px]">
             <div className="relative">
                 <div className="absolute">
                     <img className="h-[900px] rounded-[12px]" src={CarsouleData[activeIndex].img} alt="" />

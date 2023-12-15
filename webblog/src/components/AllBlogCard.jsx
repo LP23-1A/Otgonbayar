@@ -28,10 +28,10 @@ const AllBlog = () => {
     return (
         <section className="w-full flex flex-col gap-[32px] ">
         <div className="flex flex-col gap-[32px]">
-            <div>
+            <div className="max-sm:px-[32px]">
                 <h6 className="text-[24px]">All Blog Post</h6>
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between max-sm:hidden">
                 <div className="flex gap-[20px] text-[12px]">
                     <button className="hover:text-[#D4A373]" onClick={All} >All</button>
                     <button className="hover:text-[#D4A373]" onClick={() => filter('webdev')} >Webdev</button>
@@ -43,7 +43,7 @@ const AllBlog = () => {
                 <button>View All</button>
             </div> 
         </div>
-        <div className=" flex flex-wrap justify-between gap-[20px]">
+        <div className="flex flex-wrap justify-between gap-[20px] max-sm:px-[32px]">
             {
                 data.slice(0, firstData).map((props) => {
                     return (
@@ -67,7 +67,7 @@ const AllBlog = () => {
                 })
             }
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center max-sm:hidden">
             <button onClick={ReadMore} className="flex items-center border-solid border-2 border-[#a3a4a9] rounded-[12px] py-[12px] px-[20px] text-[#696A75]">Read More</button>
         </div>
     </section>
