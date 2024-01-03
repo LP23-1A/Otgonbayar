@@ -1,9 +1,10 @@
 import GeldICON from "@/icon/GeldICON";
 import GeldLOGO from "@/icon/GeldLOGO";
 
-export default function Create() {
+export default function SignUp() {
     return(
         <section className="flex">
+          <div className="w-[50%] h-[100vh] bg-white flex flex-col justify-center items-center gap-[30px]">
             <div className="flex flex-row justify-center items-center gap-[10px] p-[5px]">
               <div><GeldLOGO/></div>
               <div><GeldICON/></div>
@@ -13,13 +14,13 @@ export default function Create() {
               <p>Sign up below to create your Wallet account</p>
             </div>
             <div className="flex flex-col gap-[14px]">
-              <div className="w-full h-[]">
+              <div className="w-[385px]">
               <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Name"></input>
               </div>
-              <div className="w-full h-[]">
+              <div className="w-full">
               <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Email"></input>
               </div>
-              <div className="w-full h-[]">
+              <div className="w-full">
               <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
               </div>
               <div className="w-full">
@@ -29,11 +30,9 @@ export default function Create() {
             </div>
             <div className="flex justify-center gap-[10px]">
                 <div>Already have account?</div>
-                <Link href = "/page">
-                    <div className="text-[#0166FF]">Log in</div>
-                </Link>
+                <div className="text-[#0166FF]">Log in</div>
             </div>
-           
+          </div>
             <div className="w-[50%] bg-[#0166FF]"></div>
         </section>
     )
