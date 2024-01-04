@@ -1,5 +1,5 @@
+import { response } from "express";
 import { pool } from "../db.js";
-
 
 export const getUsers = async (req, res) => {
     try {
@@ -13,12 +13,12 @@ export const getUsers = async (req, res) => {
   }
 
 export const createUser = async (req, response) => {
-    const { name, email } = req.body;
-    console.log(name, email, 'req.body');
+    const { username, email } = req.body;
+    console.log(username, email, 'req.body');
     try {
       const queryText =
-        "INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *";
-      const res = await pool.query(queryText, [ name, email ]);
+        "INSERT INTO users (username, email) VALUES ($1, $2) RETURNING *";
+      const res = await pool.query(queryText, [ username, email ]);
       response.send(res.rows[0]);
     } catch (error) {
       console.error(error);
@@ -40,7 +40,6 @@ export const getOneUsers =  async (req, res) => {
 
 export const deleteUser = async (req, response) => {
     const { name, email, id} = req.body;
-    
     try {
       const queryText = `DELETE FROM users WHERE (name = '${name}' AND email = '${email}') OR id = '${id}'`
       await pool.query(queryText);

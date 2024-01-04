@@ -44,7 +44,12 @@ app.post("/createTable", async (_, res) => {
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
         username VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL
+        email VARCHAR(255) NOT NULL,
+        password TEXT,
+        avatar_img BYTEA,
+        createdAt TIMESTAMP,
+        updatedAt TIMESTAMP,
+        currency_type TEXT 
       )`;
       await pool.query(tableQueryText);
       res.send("ok");
