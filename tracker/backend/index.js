@@ -3,6 +3,8 @@ import bp from "body-parser";
 import dotenv from "dotenv";
 import { pool } from "./db.js";
 import { user } from "./router/user.js"
+import cors from "cors";
+
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -10,6 +12,7 @@ dotenv.config()
 
 app.use(bp.json());
 app.use('/users', user)
+app.use(cors({origin : "*"}))
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}.`);
