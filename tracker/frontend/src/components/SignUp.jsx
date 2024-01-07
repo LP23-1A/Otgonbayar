@@ -9,10 +9,10 @@ const API = "http://localhost:3001/users"
 export default function SignUp() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  // const [email, setEmail] = useState('')
-  // const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('')
+
   const handler = async () => {
-    let res = await axios.post(API, { name: name, email: email })
+    let res = await axios.post(API, { name: name, email: email, password: password })
     console.log(res, 'res');
   }
     return(
@@ -34,7 +34,7 @@ export default function SignUp() {
               <input onChange={(event) => setEmail(event.target.value)} value={email} className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Email"></input>
               </div>
               <div className="w-full">
-              <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
+              <input onChange={(event) => setPassword(event.target.value)} value={password} className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
               </div>
               <div className="w-full">
               <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Re-password"></input>

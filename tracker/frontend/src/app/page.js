@@ -1,9 +1,9 @@
-import SignUp from '@/components/SignUp'
+import Select from "@/components/SelectCURRENCY";
 
 export default function Home() {
   return (
     <div>
-      <SignUp/>
+      <Select/>
     </div>
   )
 }
