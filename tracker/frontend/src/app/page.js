@@ -1,4 +1,4 @@
-import Select from "@/components/SelectCURRENCY";
+import Select from "@/components/SelectFINISH";
 
 export default function Home() {
   return (
