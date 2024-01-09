@@ -2,10 +2,14 @@
 import MoneyLOGO from "@/icon/MoneyLOGO";
 import GeldLOGO from "@/icon/GeldLOGO";
 import GeldICON from "@/icon/GeldICON";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
+import { useState } from "react";
+
+const API = "http://localhost:3001/users"
 
 export default function Select() {
     const router = useRouter()
+    const [currency, setCURRENCY] = useState('')
     return(
         <section className="w-[100vw] py-[40px] bg-white">
             <div className="flex flex-col justify-center items-center gap-[141px]">

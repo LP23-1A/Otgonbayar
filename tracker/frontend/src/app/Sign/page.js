@@ -13,16 +13,17 @@ export default function SignUp() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   
-  const handler = async () => {
-    router.push("/StepCURRENCY")
-    let res = await axios.post(API, { name: name, email: email, password: password})
-    console.log(res, 'res');
-  }
+  // const handler = async () => {
+  //   router.push("/StepCURRENCY")
+  //   let res = await axios.post(API, { name: name, email: email, password: password})
+  //   console.log(res, 'res');
+  // }
 
-// const keys = {name, email, password}
-// const asd = () => {
-//   localStorage.setItem("data", JSON.stringify(keys));
-// };
+const keys = {name, email, password}
+const stepCURRENCY = () => {
+  router.push("/StepCURRENCY")
+  localStorage.setItem("data", JSON.stringify(keys));
+};
 
     return(
         <section className="flex">
@@ -48,7 +49,7 @@ export default function SignUp() {
               <div className="w-full">
                 <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Re-password"></input>
               </div>
-                <button onClick={handler} className="w-full bg-[#0166FF] rounded-[20px] h-[48px] text-[white]">Sign Up</button>
+                <button onClick={stepCURRENCY} className="w-full bg-[#0166FF] rounded-[20px] h-[48px] text-[white]">Sign Up</button>
             </div>
             <div className="flex justify-center gap-[10px]">
                 <div>Already have account?</div>
