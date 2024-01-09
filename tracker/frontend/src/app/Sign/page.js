@@ -3,18 +3,27 @@ import  axios from "axios";
 import { useState } from "react";
 import GeldICON from "@/icon/GeldICON";
 import GeldLOGO from "@/icon/GeldLOGO";
+import { useRouter } from "next/navigation";
 
 const API = "http://localhost:3001/users"
 
 export default function SignUp() {
+  const router = useRouter()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  
   const handler = async () => {
-    let res = await axios.post(API, { name: name, email: email, password: password })
+    router.push("/StepCURRENCY")
+    let res = await axios.post(API, { name: name, email: email, password: password})
     console.log(res, 'res');
   }
+
+// const keys = {name, email, password}
+// const asd = () => {
+//   localStorage.setItem("data", JSON.stringify(keys));
+// };
+
     return(
         <section className="flex">
           <div className="w-[50%] h-[100vh] bg-white flex flex-col justify-center items-center gap-[30px]">
@@ -43,7 +52,7 @@ export default function SignUp() {
             </div>
             <div className="flex justify-center gap-[10px]">
                 <div>Already have account?</div>
-                <div className="text-[#0166FF]">Log in</div>
+                <div onClick={() => router.push("/Login")} className="text-[#0166FF]">Log in</div>
             </div>
           </div>
             <div className="w-[50%] bg-[#0166FF]"></div>

@@ -1,9 +1,9 @@
-import Select from "@/components/SelectFINISH";
+import Login from "@/app/dashboard/dashboard";
 
 export default function Home() {
   return (
     <div>
-      <Select/>
+      <Login/>
     </div>
   )
 }

@@ -1,8 +1,23 @@
+'use client'
 import GeldICON from "@/icon/GeldICON";
 import GeldLOGO from "@/icon/GeldLOGO";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import axios from "axios";
+
+const API = "http://localhost:3001/users/user"
 
 export default function Login() {
+  const router = useRouter()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const handler = async () => {
+    let res = await axios.post(API, { email: email, password: password})
+    if ((res.data = 'success')) {
+      router.push("/Loading")
+    }
+    console.log(res, 'res');
+  }
   return (    
       <section className="flex">
         <div className="w-[50%] h-[100vh] bg-white flex flex-col justify-center items-center">
@@ -17,18 +32,16 @@ export default function Login() {
             </div>
             <div className="flex flex-col gap-[14px]">
               <div className="w-full h-[]">
-              <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Email"></input>
+              <input onChange={(event) => setEmail(event.target.value)} value={email} className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Email"></input>
               </div>
               <div className="w-full">
-              <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
+              <input onChange={(event) => setPassword(event.target.value)} value={password} className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
               </div>
-              <button className="w-full bg-[#0166FF] rounded-[20px] h-[48px] text-[white]">Log in</button>
+              <button onClick={handler} className="w-full bg-[#0166FF] rounded-[20px] h-[48px] text-[white]">Log in</button>
             </div>
             <div className="flex justify-center gap-[10px]">
               <div>Don’t have account?</div>
-              <Link href="/components/Create">
-                <div className="text-[#0166FF]">Sign up</div>
-              </Link>
+              <div onClick={() => router.push("/Sign")} className="text-[#0166FF]">Sign up</div>
             </div>
           </div>
         </div>
