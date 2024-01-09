@@ -6,7 +6,7 @@ import GeldLOGO from "@/icon/GeldLOGO";
 import { useRouter } from "next/navigation";
 
 const API = "http://localhost:3001/users"
-
+ 
 export default function SignUp() {
   const router = useRouter()
   const [name, setName] = useState('')
