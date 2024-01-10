@@ -1,24 +1,58 @@
+'use client'
+
 import GeldLOGO from "@/icon/GeldLOGO";
 import GeldLOGOwhite from "@/icon/GeldLOGOwhite";
 import GeldICONwhite from "@/icon/GeldICONwhite";
 import GreenDOT from "@/icon/GreenDOT";
 import ArrowCIrcleUp from "@/icon/ArrowCircleUp";
 import BlueDOT from "@/icon/BlueDOT";
+import { Chart } from "chart.js";
+import LastRecords from "@/components/LastRec";
+import { useRouter } from "next/navigation";
+
+const data = {
+    labels: [
+      'blue',
+      'orange',
+      'aqua',
+      'aris',
+      'purple'
+    ],
+    datasets: [{
+      label: 'My First Dataset',
+      data: [40, 30, 50, 36, 53],
+      backgroundColor: [
+        'rgb(54, 162, 235)',
+        'rgb(255,165,0)',
+        'rgb(0, 255, 255)',
+        'rgb(255,218,185)',
+        'rgb(255, 0, 255)'
+      ],
+      hoverOffset: 4
+    }]
+  };
+
+  const config = {
+    type: 'doughnut',
+    data: data,
+  };
 
 export default function dashboard() {
+    const router = useRouter()
     return(
-        <section className="w-screen flex flex-col justify-center bg-[#F3F4F6]">
-            <nav className="w-full h-[72px] flex justify-around items-center bg-white">
+        <section className="w-[1440px] flex flex-col justify-center m-auto bg-[#F3F4F6]">
+            <nav className="w-full h-[72px] px-[120px] flex justify-between items-center bg-white">
                 <div className="flex gap-[24px]">
                     <GeldLOGO/>
-                    <p>Dashboard</p>
-                    <p>Records</p>
+                    <button>Dashboard</button>
+                    <button onClick={() => router.push("/Records")}>Records</button>
                 </div>
                 <div className="flex gap-[24px]">
                     <button className="w-[100px] h-[32px] rounded-[20px] bg-[#0166FF] text-white">+ Record</button>
+
                 </div>
             </nav>
-            <div className="flex gap-[10px] mt-[10px] justify-center">
+            <div className="flex gap-[15px] mt-[10px] justify-center">
                 <div className="w-[392px] h-[220px] rounded-[18px] bg-[blue]">
                     <div className="flex items-center gap-[8px] mt-[32px] ml-[32px]">
                         <GeldLOGOwhite/>
@@ -62,7 +96,7 @@ export default function dashboard() {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center gap-[20px] mt-[20px]">
+            <div className="flex justify-center gap-[25px] mt-[20px]">
                 <div className="w-[588px] h-[290px] bg-white rounded-[8px]">
                     <div></div>
                     <div></div>
@@ -78,10 +112,11 @@ export default function dashboard() {
                 </div>
             </div>
             <div className="flex justify-center mt-[20px]">
-                <div className="w-[1200px] h-[500px] bg-white rounded-[8px]">
+                <div className="w-[1200px] bg-white rounded-[8px]">
                     <div className="px-[24px] py-[30px]">
                         <p>Last Records</p>
                     </div>
+                <LastRecords/>
                 </div>
             </div>
             

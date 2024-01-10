@@ -1,9 +1,9 @@
-import Login from "@/app/dashboard/dashboard";
+import Login from "@/app/Records/page";
 
 export default function Home() {
   return (
-    <div>
+    <section>
       <Login/>
-    </div>
+    </section>
   )
 }

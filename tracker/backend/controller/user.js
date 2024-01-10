@@ -13,12 +13,11 @@ export const getUsers = async (req, res) => {
   }
 
 export const createUser = async (req, response) => {
-    const { username, email } = req.body;
-    console.log(username, email, 'req.body');
+    const { name, email, password } = req.body;
     try {
       const queryText =
-        "INSERT INTO users (username, email) VALUES ($1, $2) RETURNING *";
-      const res = await pool.query(queryText, [ username, email ]);
+        "INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *";
+      const res = await pool.query(queryText, [ name, email, password ]);
       response.send(res.rows[0]);
     } catch (error) {
       console.error(error);

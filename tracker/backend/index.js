@@ -5,7 +5,6 @@ import { pool } from "./db.js";
 import { user } from "./router/user.js"
 import cors from "cors";
 
-
 const app = express()
 const PORT = process.env.PORT || 3001
 dotenv.config()
@@ -46,7 +45,7 @@ app.post("/createTable", async (_, res) => {
       const tableQueryText = `
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
-        username VARCHAR(255) NOT NULL,
+        name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         password TEXT,
         avatar_img BYTEA,
