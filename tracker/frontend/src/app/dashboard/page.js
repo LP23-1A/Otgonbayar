@@ -98,7 +98,9 @@ export default function dashboard() {
             </div>
             <div className="flex justify-center gap-[25px] mt-[20px]">
                 <div className="w-[588px] h-[290px] bg-white rounded-[8px]">
-                    <div></div>
+                    <div className="p-[24px]">
+                        <p>Income - Expense</p>
+                    </div>
                     <div></div>
                 </div>
                 <div className="w-[588px] h-[290px] bg-white rounded-[8px]">
@@ -116,6 +118,10 @@ export default function dashboard() {
                     <div className="px-[24px] py-[30px]">
                         <p>Last Records</p>
                     </div>
+                <LastRecords/>
+                <LastRecords/>
+                <LastRecords/>
+                <LastRecords/>
                 <LastRecords/>
                 </div>
             </div>

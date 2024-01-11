@@ -51,7 +51,7 @@ app.post("/createTable", async (_, res) => {
         avatar_img BYTEA,
         createdAt TIMESTAMP,
         updatedAt TIMESTAMP,
-        currency_type TEXT 
+        currency_type TEXT DEFAULT 'MNT'
       )`;
       await pool.query(tableQueryText);
       res.send("ok");

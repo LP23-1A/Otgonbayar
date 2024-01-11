@@ -6,32 +6,7 @@ const lastrec = [
         date: '3 hours ago',
         minus: '-',
         value: '1,000₮'
-    },
-    {
-        title: 'Lending & Renting',
-        date: '3 hours ago',
-        minus: '-',
-        value: '1,000₮'
-    },
-    {
-        title: 'Lending & Renting',
-        date: '3 hours ago',
-        minus: '-',
-        value: '1,000₮'
-    },
-    {
-        title: 'Lending & Renting',
-        date: '3 hours ago',
-        minus: '-',
-        value: '1,000₮'
-    },
-    {
-        title: 'Lending & Renting',
-        date: '3 hours ago',
-        minus: '-',
-        value: '1,000₮'
-    },
-    
+    }
 ]
 
 export default function LastRecords() {

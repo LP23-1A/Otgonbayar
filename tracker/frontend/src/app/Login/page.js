@@ -35,7 +35,7 @@ export default function Login() {
               <input onChange={(event) => setEmail(event.target.value)} value={email} className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Email"></input>
               </div>
               <div className="w-full">
-              <input onChange={(event) => setPassword(event.target.value)} value={password} className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
+              <input onChange={(event) => setPassword(event.target.value)} value={password} type="password" className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
               </div>
               <button onClick={handler} className="w-full bg-[#0166FF] rounded-[20px] h-[48px] text-[white]">Log in</button>
             </div>

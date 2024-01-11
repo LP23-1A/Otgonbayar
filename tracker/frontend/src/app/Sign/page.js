@@ -44,7 +44,7 @@ const stepCURRENCY = () => {
                 <input onChange={(event) => setEmail(event.target.value)} value={email} className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Email"></input>
               </div>
               <div className="w-full">
-                <input onChange={(event) => setPassword(event.target.value)} value={password} className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
+                <input onChange={(event) => setPassword(event.target.value)} value={password} type="password" className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Password"></input>
               </div>
               <div className="w-full">
                 <input className="w-full py-[15px] px-[15px] bg-[#F3F4F6] rounded-[8px]" placeholder="Re-password"></input>
