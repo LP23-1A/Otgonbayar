@@ -1,5 +1,5 @@
 import { response } from "express";
-import { pool } from "../db.js";
+import { pool } from "../../db.js";
 
 export const getUsers = async (req, res) => {
     try {
@@ -13,11 +13,11 @@ export const getUsers = async (req, res) => {
   }
 
 export const createUser = async (req, response) => {
-    const { name, email, password } = req.body;
+    const { id, name, email, password } = req.body;
     try {
       const queryText =
-        "INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *";
-      const res = await pool.query(queryText, [ name, email, password ]);
+        "INSERT INTO users (id, name, email, password) VALUES ($1, $2, $3, $4) RETURNING *";
+      const res = await pool.query(queryText, [id, name, email, password ]);
       response.send(res.rows[0]);
     } catch (error) {
       console.error(error);

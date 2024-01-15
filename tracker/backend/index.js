@@ -44,14 +44,32 @@ app.post("/createTable", async (_, res) => {
     try {
       const tableQueryText = `
       CREATE TABLE IF NOT EXISTS users (
-        id SERIAL PRIMARY KEY,
+        id uuid PRIMARY KEY ,
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
-        password TEXT,
+        password VARCHAR(255) NOT NULL,
         avatar_img BYTEA,
-        createdAt TIMESTAMP,
-        updatedAt TIMESTAMP,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         currency_type TEXT DEFAULT 'MNT'
+      )`;
+      await pool.query(tableQueryText);
+      res.send("ok");
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+app.post("/createCategory", async (_, res) => {
+    try {
+      const tableQueryText = `
+      CREATE TABLE IF NOT EXISTS users (
+        id uuid PRIMARY KEY DEFAULT gen_random_uuid (),
+        name VARCHAR(255) NOT NULL,
+        description VARCHAR(255) NOT NULL,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        category_image VARCHAR(50)
       )`;
       await pool.query(tableQueryText);
       res.send("ok");
