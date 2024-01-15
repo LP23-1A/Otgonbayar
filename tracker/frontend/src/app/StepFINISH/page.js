@@ -3,9 +3,18 @@ import GeldLOGO from "@/icon/GeldLOGO";
 import GeldICON from "@/icon/GeldICON";
 import Done from "@/icon/DoneLOGO";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+
+const API = "http://localhost:3001/users"
 
 export default function Finish() {
     const router = useRouter()
+    const handler = async () => {
+        let data = JSON.parse(localStorage.getItem("data"))
+        let res = await axios.post(API, {name: data.name, email: data.email, password: data.password, currency_type: data.currency});
+        console.log(res);
+        router.push("/dashboard");
+    };
     return(
         <section className="w-[100vw] py-[40px] bg-white">
             <div className="flex flex-col justify-center items-center gap-[141px]">
@@ -32,7 +41,7 @@ export default function Finish() {
                             <p>Your very first account has been created. Now continue to dashboard and start tracking</p>
                     </div>
                     <div className="w-full h-[48px] bg-[#0166FF] mt-[32px] flex justify-center rounded-[20px] text-[white]">
-                        <button className="w-full">Go to Dashboard</button>
+                        <button onClick={handler} className="w-full">Go to Dashboard</button>
                     </div>
                 </div>
             </div>

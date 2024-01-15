@@ -9,11 +9,12 @@ const API = "http://localhost:3001/users"
 
 export default function Select() {
     const router = useRouter()
-    const [currency, setCURRENCY] = useState('')
+    const [currency, setCURRENCY] = useState('MNT')
     const handler = async () => {
-        data.currency = currency
-        localStorage.setItem("data", JSON.stringify(data))
-        router.push("/StepFINISH")
+        let data = JSON.parse(localStorage.getItem("data"));
+        data.currency = currency; 
+        localStorage.setItem("data", JSON.stringify(data));
+        router.push("/StepFINISH");
     }
     return(
         <section className="w-[100vw] py-[40px] bg-white">

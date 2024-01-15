@@ -13,10 +13,9 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const handler = async () => {
     let res = await axios.post(API, { email: email, password: password})
-    if ((res.data = 'success')) {
-      router.push("/Loading")
+    if ((res.data === 'success')) {
+      router.push("/dashboard")
     }
-    console.log(res, 'res');
   }
   return (    
       <section className="flex">

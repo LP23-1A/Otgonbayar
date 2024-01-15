@@ -28,7 +28,56 @@ export default function Records() {
                 <div className="left flex flex-col gap-[24px] w-[270px] py-[24px] px-[16px]">
                     <div className="flex flex-col gap-[24px]">
                         <h4 className="text-[24px]" >Records</h4>
-                        <button className="w-full btn btn-primary">+ Add</button>
+                        {/* <button className="w-full btn btn-primary">+ Add</button> */}
+                        <button className="btn btn-primary" onClick={()=>document.getElementById('my_modal_3').showModal()}>+ Add</button>
+                        <dialog id="my_modal_3" className="modal">
+                        <div className="modal-box">
+                            <div className="flex flex-col">
+                                <div className="flex">
+                                    <form method="dialog">
+                                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                    </form>
+                                    <h3 className="font-bold text-lg">Add Record</h3>
+                                </div>
+                            </div>
+                            <div className="flex">
+                            <div className="left flex flex-col p-[24px] gap-[20px]">
+                                <div className="flex justify-center bg-[#F3F4F6] rounded-[20px]">              
+                                    <button className="btn w-[50%] btn-primary rounded-[20px]">Expense</button>
+                                    <button className="btn w-[50%] bg-[#F3F4F6] rounded-[20px]">Income</button>
+                                </div>
+                                <div>
+                                    <div className="flex flex-col gap-[30px]">
+                                        <div className="flex flex-col p-[12px] bg-[#F3F4F6] rounded-[8px]">
+                                            <p>Amount</p>
+                                            <div className="flex gap-[5px]">
+                                                <input className="bg-[#F3F4F6] w-[15px]" placeholder="₮"></input>
+                                                <input className="bg-[#F3F4F6]" placeholder="000.00"></input>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-[5px] w-full ">
+                                            <p>Category</p>
+                                            <div>
+                                                <select className="bg-[#F3F4F6] p-[12px] w-full rounded-[8px]"></select>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <p>Date</p>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="right">
+                            </div>
+                            </div>
+                        </div>
+                        </dialog>
                     </div>
                     <div>
                         <input placeholder="search" className="w-full bg-[#e6e4e4] px-[16px] py-[8px] rounded-[8px]"></input>
