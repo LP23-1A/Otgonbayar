@@ -6,34 +6,34 @@ const RecCat = [
         text: "Food & Drinks",
     },
     {
-        text: "Food & Drinks",
+        text: "Shopping",
     },
     {
-        text: "Food & Drinks",
+        text: "Housing",
     },
     {
-        text: "Food & Drinks",
+        text: "Transportation",
     },
     {
-        text: "Food & Drinks",
+        text: "Vehicle",
     },
     {
-        text: "Food & Drinks",
+        text: "Life & Entertainment",
     },
     {
-        text: "Food & Drinks",
+        text: "Communication, PC",
     },
     {
-        text: "Food & Drinks",
+        text: "Financial expenses",
     },
     {
-        text: "Food & Drinks",
+        text: "Investments",
     },
     {
-        text: "Food & Drinks",
+        text: "Income",
     },
     {
-        text: "Food & Drinks",
+        text: "Others",
     },
 ]
 
