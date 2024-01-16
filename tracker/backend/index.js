@@ -63,13 +63,34 @@ app.post("/createTable", async (_, res) => {
 app.post("/createCategory", async (_, res) => {
     try {
       const tableQueryText = `
-      CREATE TABLE IF NOT EXISTS users (
+      CREATE TABLE IF NOT EXISTS category (
         id uuid PRIMARY KEY DEFAULT gen_random_uuid (),
         name VARCHAR(255) NOT NULL,
         description VARCHAR(255) NOT NULL,
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         category_image VARCHAR(50)
+      )`;
+      await pool.query(tableQueryText);
+      res.send("ok");
+    } catch (error) {
+      console.error(error);
+    }
+   });
+
+app.post("/createTransaction", async (_, res) => {
+    try {
+      const tableQueryText = `
+      CREATE TABLE IF NOT EXISTS transaction (
+        id uuid PRIMARY KEY DEFAULT gen_random_uuid (),
+        user_id uuid PRIMARY KEY DEFAULT gen_random_uuid (),
+        name VARCHAR(255) NOT NULL,
+        amount VARCHAR(255) NOT NULL,
+        transaction_type ENUM("INC", "EXP"),
+        description VARCHAR(255) NOT NULL,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        category_id uuid PRIMARY KEY DEFAULT gen_random_uuid ()
       )`;
       await pool.query(tableQueryText);
       res.send("ok");
