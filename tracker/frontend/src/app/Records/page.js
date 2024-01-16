@@ -61,11 +61,13 @@ export default function Records() {
                                                 <select className="bg-[#F3F4F6] p-[12px] w-full rounded-[8px]"></select>
                                             </div>
                                         </div>
-                                        <div>
+                                        <div className="flex">
                                             <div>
                                                 <p>Date</p>
                                             </div>
-                                            <div></div>
+                                            <div>
+                                                <p>Date</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div>

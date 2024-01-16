@@ -2,7 +2,7 @@ import express from "express";
 import bp from "body-parser";
 import dotenv from "dotenv";
 import { pool } from "./db.js";
-import { user } from "./router/user.js"
+import { user } from ".././/backend/src/router/user.js";
 import cors from "cors";
 
 const app = express()
@@ -44,7 +44,7 @@ app.post("/createTable", async (_, res) => {
     try {
       const tableQueryText = `
       CREATE TABLE IF NOT EXISTS users (
-        id uuid PRIMARY KEY ,
+        id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         password VARCHAR(255) NOT NULL,
@@ -76,7 +76,7 @@ app.post("/createCategory", async (_, res) => {
     } catch (error) {
       console.error(error);
     }
-  });
+   });
 
 // app.post("/user", async (req, response) => {
 //   const { name, email } = req.body;

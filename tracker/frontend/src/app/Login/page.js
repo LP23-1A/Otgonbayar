@@ -13,7 +13,8 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const handler = async () => {
     let res = await axios.post(API, { email: email, password: password})
-    if ((res.data === 'success')) {
+    console.log(res.data);
+    if (res.data = 'success') {
       router.push("/dashboard")
     }
   }

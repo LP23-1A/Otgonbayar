@@ -5,6 +5,6 @@ import { getUsers, createUser, getOneUsers, deleteUser, updateUser } from "../co
 const user = express.Router()
 
 user.route('/').get(getUsers).post(createUser)
-user.route('/user').get(getOneUsers).delete(deleteUser).put(updateUser)
+user.route('/user').post(getOneUsers).delete(deleteUser).put(updateUser)
 
 export { user }

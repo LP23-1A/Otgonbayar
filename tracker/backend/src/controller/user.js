@@ -13,11 +13,11 @@ export const getUsers = async (req, res) => {
   }
 
 export const createUser = async (req, response) => {
-    const { id, name, email, password } = req.body;
+    const { name, email, password } = req.body;
     try {
       const queryText =
-        "INSERT INTO users (id, name, email, password) VALUES ($1, $2, $3, $4) RETURNING *";
-      const res = await pool.query(queryText, [id, name, email, password ]);
+        "INSERT INTO users ( name, email, password) VALUES ($1, $2, $3 ) RETURNING *";
+      const res = await pool.query(queryText, [ name, email, password ]);
       response.send(res.rows[0]);
     } catch (error) {
       console.error(error);
@@ -26,12 +26,15 @@ export const createUser = async (req, response) => {
   }
 
 export const getOneUsers =  async (req, res) => {
-    const { name, email } = req.body;
+    const { email, password } = req.body;
     try {
         const queryText =
-        `SELECT * FROM users WHERE name='${name}' AND email='${email}'`;
+        `SELECT * FROM users WHERE email='${email}' AND password='${password}'`;
         const response = await pool.query(queryText);
-        res.send(response.rows);
+        if (response.rows.length !== 0) {
+        res.send("success");
+          
+        }
       } catch (error) {
         console.error(error);
     }
