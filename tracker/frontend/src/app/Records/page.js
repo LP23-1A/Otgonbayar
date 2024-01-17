@@ -1,4 +1,7 @@
 "use client"
+import AddCategory from "@/components/AddCategory";
+import AddCat from "@/components/AddCategory";
+import AddRecord from "@/components/AddRecord";
 import RecCategory from "@/components/Category";
 import Food from "@/components/FoodDrink";
 import FoodRed from "@/components/FoodRed";
@@ -9,6 +12,8 @@ import GeldLOGO from "@/icon/GeldLOGO";
 import House from "@/icon/House";
 import Plus from "@/icon/Plus";
 import { useRouter } from "next/navigation";
+
+
 
 export default function Records() {
     const router = useRouter()
@@ -29,6 +34,7 @@ export default function Records() {
                     <div>
                         <input placeholder="search" className="w-full bg-[#e6e4e4] px-[16px] py-[8px] rounded-[8px]"></input>
                     </div>
+                    <AddRecord/>
                     <div className="flex flex-col gap-[8px]">
                         <p>Types</p>
                         <Types/>
@@ -42,8 +48,7 @@ export default function Records() {
                             <RecCategory/>
                         </div>
                         <div className="flex items-center gap-[8px]">
-                            <Plus/>
-                            <button>Add Category</button>
+                            <AddCategory/>
                         </div>
                     </div>
                     <div className="flex flex-col gap-[16px]">

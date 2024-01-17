@@ -3,7 +3,9 @@ import bp from "body-parser";
 import dotenv from "dotenv";
 import { pool } from "./db.js";
 import { user } from ".././/backend/src/router/user.js";
+import { category } from "../backend/src/router/category.js";
 import cors from "cors";
+import { transaction } from "./src/router/transaction.js";
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -11,6 +13,8 @@ dotenv.config()
 
 app.use(bp.json());
 app.use('/users', user)
+app.use('/category', category)
+app.use('transaction', transaction)
 app.use(cors({origin : "*"}))
 
 app.listen(PORT, () => {

@@ -1,5 +1,7 @@
 import Eye from "@/icon/Eye";
 import Arrow from "@/icon/ArrowDropDown";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const RecCat = [
     {
@@ -37,15 +39,25 @@ const RecCat = [
     },
 ]
 
+const API = "http://localhost:3001/category/category"
+
 export default function RecCategory() {
-    return(
-        RecCat.map((props) => {
+    const [name, setName] = useState('')
+
+    const handler = async () => {
+        let res = await axios.get(API, { name : name })
+        setName(res.data)
+        console.log('data', res.data);
+    }
+    return( 
+        RecCat.map((el) => {
             return(
-            <div className="flex items-center justify-between">
+            <div key={el} className="flex items-center justify-between">
                 <div className="flex items-center gap-[8px]">
                     <Eye/>
-                    <p>{props.text}</p>
+                    <p>{el.name}</p>
                 </div>
+                <button onClick={handler}>click here</button>
                 <p><Arrow/></p>
             </div>
             )
