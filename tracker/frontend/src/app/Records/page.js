@@ -13,8 +13,6 @@ import House from "@/icon/House";
 import Plus from "@/icon/Plus";
 import { useRouter } from "next/navigation";
 
-
-
 export default function Records() {
     const router = useRouter()
     return(

@@ -14,7 +14,7 @@ dotenv.config()
 app.use(bp.json());
 app.use('/users', user)
 app.use('/category', category)
-app.use('transaction', transaction)
+app.use('/transaction', transaction)
 app.use(cors({origin : "*"}))
 
 app.listen(PORT, () => {
@@ -86,16 +86,15 @@ app.post("/createTransaction", async (_, res) => {
     try {
       const tableQueryText = `
       CREATE TABLE IF NOT EXISTS transaction (
-        id uuid PRIMARY KEY DEFAULT gen_random_uuid (),
-        user_id uuid PRIMARY KEY DEFAULT gen_random_uuid (),
-        name VARCHAR(255) NOT NULL,
-        amount VARCHAR(255) NOT NULL,
-        transaction_type ENUM("INC", "EXP"),
-        description VARCHAR(255) NOT NULL,
-        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        category_id uuid PRIMARY KEY DEFAULT gen_random_uuid ()
-      )`;
+        id uuid PRIMARY KEY DEFAULT gen_random_uuid () ,
+        user_id uuid references users(id),
+        name TEXT,
+        amount REAL NOT NULL,
+        transaction_type VARCHAR(3) CHECK (transaction_type IN ('INC', 'EXP')),
+        description TEXT,
+        createdAt TIMESTAMP DEFAULT NOW(),
+        updatedAt TIMESTAMP DEFAULT NOW(),
+        category_id uuid references category(id))`;
       await pool.query(tableQueryText);
       res.send("ok");
     } catch (error) {
