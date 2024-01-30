@@ -7,13 +7,13 @@ import { Box } from "@mui/material";
 
 export default function Footer() {
     return(
-        <section className="w-[1240px] flex flex-col bg-[#18BA51] gap-[40px] py-[114px] px-[120px] relative">
+        <Box sx={{ width:'1240px', display:'flex', flexDirection:'column', bgcolor:'#18BA51', gap:'40px', position:'relative', paddingY:'114px', paddingX:'120px' }}>
                 <Box sx={{ position:'absolute', top:'0', left:'0' }}>
                     <Background/>
                 </Box>
-                <Box sx={{ display:'flex', justifyContent:'center', gap:'8px', color:'white' }}>
+                <Box sx={{ display:'flex', justifyContent:'center', gap:'8px', color:'white', fontSize:'20px' }}>
                     <LogoWhite/>
-                    <p className="text-[20px]">Food Delivery</p>
+                    <p>Food Delivery</p>
                 </Box>
                 <Box sx={{ display:'flex', justifyContent:'space-between', color:'white' }}>
                     <p>Нүүр</p>
@@ -33,6 +33,6 @@ export default function Footer() {
                     <p>© 2024 Pinecone Foods LLC </p>
                     <p>Зохиогчийн эрх хуулиар хамгаалагдсан.</p>
                 </Box>
-        </section>
+        </Box>
     )
 }

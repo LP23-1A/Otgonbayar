@@ -32,27 +32,30 @@ export default function Login() {
     const Signup = async () => {
         router.push("/Signup")
     }
+    const Forget = async () => {
+        router.push("/forgetpass")
+    }
 
     return(
-        <div className="flex flex-col items-center gap-[70px]">
+        <Box sx={{ display:'flex', flexDirection:"column", alignItems:'center', gap:'70px' }}>
             <Topbar/>
-            <div className="flex flex-col items-center gap-[48px] p-[32px]">
-                <div className="text-[32px]">
+            <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'48px', padding:'32px'}}>
+                <Box sx={{ fontSize:'32px' }}>
                     <p>Нэвтрэх</p>
-                </div>
-                <div className="w-[250px]">
-                    <div className="w-full py-[10px]">
-                        <p className="text-[14px]">Имэйл</p>
+                </Box>
+                <Box sx={{ width:'250px' }}>
+                    <Box sx={{ width:'full', paddingY:'10px', fontSize:'14px' }}>
+                        <p>Имэйл</p>
                         <input 
                         className=" w-full flex flex-col items-center py-[15px] px-[10px] bg-[#F7F7F8] rounded-[4px]"
                         type="text"
                         placeholder="Имэйл хаягаа оруулна уу"
                         />
-                    </div>
-                    <div className="w-full py-[10px]">
-                        <p className="text-[14px]">Нууц үг</p>
-                        <Box sx={{width: '25ch' }} variant="filled">
-                        <FormControl sx={{ width: '25ch' }} variant="filled">
+                    </Box>
+                    <Box sx={{ width:'full', paddingY:'10px', fontSize:'14px' }}>
+                        <p>Нууц үг</p>
+                        <Box sx={{width: '250px' }} variant="filled">
+                        <FormControl sx={{ width: '250px' }} variant="filled">
                             <InputLabel htmlFor="filled-adornment-password">Нууц үг</InputLabel>
                             <FilledInput
                                 id="filled-adornment-password"
@@ -72,16 +75,18 @@ export default function Login() {
                             />
                         </FormControl>
                         </Box>
-                        <p className="flex justify-end text-[#3F4145] text-[14px]">Нууц үг сэргээх</p>
-                    </div>
-                </div>
-                <div className="w-full flex flex-col items-center gap-[32px]">
+                        <Box sx={{ display:'flex', justifyContent:'end', fontSize:'14px', color:'#3F4145' }}>
+                            <button onClick={Forget}>Нууц үг сэргээх</button>
+                        </Box>
+                    </Box>
+                </Box>
+                <Box sx={{ width:'250px', display:'flex', flexDirection:'column', alignItems:'center', gap:"32px" }}>
                     <button className="w-full rounded-[4px] py-[8px] bg-[#EEEFF2] text-[#1C20243D]">Нэвтрэх</button>
                     <p>Эсвэл</p>
                     <button onClick={Signup} className="w-full rounded-[4px] py-[8px] border-solid text-[#272727]">Бүртгүүлэх</button>
-                </div>
-            </div>
+                </Box>
+            </Box>
             <Footer/>
-        </div>
+        </Box>
     )
 }

@@ -28,38 +28,38 @@ export default function Signup() {
       event.preventDefault();
     };
     return(
-        <section className="flex flex-col items-center gap-[80px]">
+        <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'80px' }}>
             <Topbar/>
-            <div className="flex flex-col items-center gap-[48px] p-[32px] w-[370px]">
-                <div className="text-[32px]">
+            <Box sx={{ width:'370px', display:'flex', flexDirection:'column', alignItems:'center', gap:'48px', padding:'32px'}}>
+                <Box sx={{fontSize:'32px'}}>
                     <p>Бүртгүүлэх</p>
-                </div>
-                <div className="w-full">
-                    <div className="py-[10px]">
+                </Box>
+                <Box sx={{width:'full'}}>
+                    <Box sx={{width:'305px', paddingY:'10px'}}>
                         <p className="text-[14px]">Нэр</p>
                         <input 
                         className=" w-full flex flex-col items-center py-[15px] px-[10px] bg-[#F7F7F8] rounded-[4px]"
                         type="text"
                         placeholder="Нэрээ оруулна уу"
                         />
-                    </div>
-                    <div className="py-[10px]">
+                    </Box>
+                    <Box sx={{paddingY:'10px'}}>
                         <p className="text-[14px]">И-мэйл</p>
                         <input 
                         className=" w-full flex flex-col items-center py-[15px] px-[10px] bg-[#F7F7F8] rounded-[4px]"
                         type="text"
                         placeholder="И-мэйл хаягаа оруулна уу"
                         />
-                    </div>
-                    <div className="py-[10px]">
+                    </Box>
+                    <Box sx={{paddingY:'10px'}}>
                         <p className="text-[14px]">Нэр</p>
                         <input 
                         className=" w-full flex flex-col items-center py-[15px] px-[10px] bg-[#F7F7F8] rounded-[4px]"
                         type="text"
                         placeholder="Нэрээ оруулна уу"
                         />
-                    </div>
-                    <div className="py-[10px]">
+                    </Box>
+                    <Box sx={{paddingY:'10px'}}>
                         <p className="text-[14px]">Нууц үг</p>
                         <Box sx={{width: '25ch' }} variant="filled">
                         <FormControl sx={{ width: '305px' }} variant="filled">
@@ -82,8 +82,8 @@ export default function Signup() {
                             />
                         </FormControl>
                         </Box>
-                    </div>
-                    <div className="py-[10px]">
+                    </Box>
+                    <Box sx={{paddingY:'10px'}}>
                         <p className="text-[14px]">Нууц үг давтах</p>
                         <Box sx={{width: '25ch' }} variant="filled">
                         <FormControl sx={{ width: '305px' }} variant="filled">
@@ -106,17 +106,17 @@ export default function Signup() {
                             />
                         </FormControl>
                         </Box>
-                    </div>
-                </div>
-                <div className='w-full flex flex-col gap-[8px]'>
-                    <div className='flex items-center'>
+                    </Box>
+                </Box>
+                <Box sx={{ width:'full', display:'flex', flexDirection:'column', gap:'8px' }}>
+                    <Box sx={{display:'flex', alignItems:'center'}} className='flex items-center'>
                         <Checkbox {...label} />
                         <p>Үйлчилгээний нөхцөл зөвшөөрөх</p>
-                    </div>
+                    </Box>
                     <button className="w-full rounded-[4px] py-[8px] bg-[#EEEFF2] text-[#1C20243D]">Бүртгүүлэх</button>
-                </div>
-            </div>
+                </Box>
+            </Box>
             <Footer/>
-        </section>
+        </Box>
     )
 }
