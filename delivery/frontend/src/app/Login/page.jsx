@@ -39,6 +39,7 @@ export default function Login() {
     return(
         <Box sx={{ display:'flex', flexDirection:"column", alignItems:'center', gap:'70px' }}>
             <Topbar/>
+            
             <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'48px', padding:'32px'}}>
                 <Box sx={{ fontSize:'32px' }}>
                     <p>Нэвтрэх</p>

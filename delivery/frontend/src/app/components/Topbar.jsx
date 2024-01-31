@@ -1,8 +1,13 @@
+'use client'
 import Logo from "../icon/Logo";
 import Search from "../icon/Search";
 import Bag from "../icon/Bag";
 import Profile from "../icon/Profile";
-import { Box, Stack } from "@mui/material";
+import { Box, Button, FilledInput, FormControl, IconButton, InputAdornment, InputLabel, Stack } from "@mui/material";
+import * as React from 'react';
+import Modal from '@mui/material/Modal';
+import { Visibility } from "@mui/icons-material";
+import LoginModal from "../components/LoginModal";
 
 export default function Navbar() {
     return(
@@ -24,10 +29,7 @@ export default function Navbar() {
                     <Bag/>
                     <p>Сагс</p>
                 </Box>
-                <Box sx={{ display:'flex', alignItems:'center', gap:'8px', paddingX:'16px', paddingY:'8px' }}>
-                    <Profile/>
-                    <p>Нэвтрэх</p>
-                </Box>
+                <LoginModal/>
             </Stack>
         </Box>
     )
