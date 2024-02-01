@@ -3,6 +3,7 @@ import Topbar from "../components/Topbar";
 import Footer from "../components/Footer";
 import Background from "../icon/Homebg";
 import Fastdelivery from "../components/fastdelivery";
+import SaleMeals from "../components/Salemeals";
 
 export default function Home() {
     return(
@@ -24,8 +25,11 @@ export default function Home() {
                     </Box>
                 </Box>
             </Stack>
-            <Stack sx={{display:'flex', flexDirection:'row', gap:'47px'}}>
+            <Stack sx={{display:'flex', flexDirection:'row', gap:'60px'}}>
                 <Fastdelivery/>
+            </Stack>
+            <Stack sx={{display:'flex', flexDirection:'row', gap:'45px'}}>
+                <SaleMeals/>
             </Stack>
             <Box sx={{marginTop:'200px'}}>
                <Footer/> 
