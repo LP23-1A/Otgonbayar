@@ -2,8 +2,8 @@ import express from "express";
 import { connectDatabase } from "./utils/database";
 import { auth } from "./router/user";
 
+connectDatabase()
 const start = () => {
-    connectDatabase()
     const app = express()
     app.use(express.json())
     app.use("/user", auth)

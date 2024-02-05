@@ -4,6 +4,7 @@ import { userModel } from "../model/user";
 type SignUpType = {
     username : string
     email : string
+    number : number
     password : string
 }
 
@@ -14,9 +15,10 @@ type LogIn = {
 
 export const createUser = async (req : Request, res : Response) => {
     try {
-        const {username, email, password} : Required<SignUpType> = req.body
-        const result = await userModel.create({username, email, password })
-        console.log(result);      
+        const {username, email, number, password} : Required<SignUpType> = req.body
+        const result = await userModel.create({username : username, email : email, number : number, password : password })
+        console.log(result); 
+        res.send(result)     
     } catch (error) {
         console.log(error);
     }

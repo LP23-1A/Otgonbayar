@@ -19,7 +19,18 @@ import Checkbox from '@mui/material/Checkbox';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
+const BASE_URL_END_POINT = "http://localhost:8000/user/createUser"
+
 export default function Signup() {
+    const [username, setUsername] = React.useState('')
+    const [email, setEmail] = React.useState('')
+    const [number, setNumber] = React.useState('')
+    const [password, setPassword] = React.useState('')
+
+    const handler = () => {
+        
+    }
+
     const [showPassword, setShowPassword] = React.useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -38,6 +49,8 @@ export default function Signup() {
                     <Box sx={{width:'305px', paddingY:'10px'}}>
                         <p className="text-[14px]">Нэр</p>
                         <input 
+                        value={username}
+                        onChange={(event) => setUsername(event.target.value)}
                         className=" w-full flex flex-col items-center py-[15px] px-[10px] bg-[#F7F7F8] rounded-[4px]"
                         type="text"
                         placeholder="Нэрээ оруулна уу"
@@ -46,17 +59,21 @@ export default function Signup() {
                     <Box sx={{paddingY:'10px'}}>
                         <p className="text-[14px]">И-мэйл</p>
                         <input 
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
                         className=" w-full flex flex-col items-center py-[15px] px-[10px] bg-[#F7F7F8] rounded-[4px]"
                         type="text"
                         placeholder="И-мэйл хаягаа оруулна уу"
                         />
                     </Box>
                     <Box sx={{paddingY:'10px'}}>
-                        <p className="text-[14px]">Нэр</p>
+                        <p className="text-[14px]">Дугаар</p>
                         <input 
+                        value={number}
+                        onChange={(event) => setNumber(event.target.value)}
                         className=" w-full flex flex-col items-center py-[15px] px-[10px] bg-[#F7F7F8] rounded-[4px]"
                         type="text"
-                        placeholder="Нэрээ оруулна уу"
+                        placeholder="Дугаар оруулна уу"
                         />
                     </Box>
                     <Box sx={{paddingY:'10px'}}>

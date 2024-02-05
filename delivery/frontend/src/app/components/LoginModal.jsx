@@ -2,7 +2,7 @@
 import { Box, Button, FilledInput, FormControl, IconButton, InputAdornment, InputLabel, Stack } from "@mui/material";
 import * as React from 'react';
 import Modal from '@mui/material/Modal';
-import { Folder, Visibility } from "@mui/icons-material";
+import { Folder, Visibility, VisibilityOff } from "@mui/icons-material";
 import Signup from "../Signup/page";
 import Forget from "../forgetpass/page";
 import Profile from "../icon/Profile";
