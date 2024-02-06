@@ -35,9 +35,10 @@ export default function Signup() {
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
   
-    const handleMouseDownPassword = (event) => {
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
     };
+
     return(
         <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'80px' }}>
             <Topbar/>
@@ -78,7 +79,7 @@ export default function Signup() {
                     </Box>
                     <Box sx={{paddingY:'10px'}}>
                         <p className="text-[14px]">Нууц үг</p>
-                        <Box sx={{width: '25ch' }} variant="filled">
+                        <Box sx={{width: '25ch' }} >
                         <FormControl sx={{ width: '305px' }} variant="filled">
                             <InputLabel htmlFor="filled-adornment-password">Нууц үг</InputLabel>
                             <FilledInput
@@ -102,7 +103,7 @@ export default function Signup() {
                     </Box>
                     <Box sx={{paddingY:'10px'}}>
                         <p className="text-[14px]">Нууц үг давтах</p>
-                        <Box sx={{width: '25ch' }} variant="filled">
+                        <Box sx={{width: '25ch' }} >
                         <FormControl sx={{ width: '305px' }} variant="filled">
                             <InputLabel htmlFor="filled-adornment-password">Нууц үгээ оруулна уу</InputLabel>
                             <FilledInput

@@ -1,5 +1,7 @@
 'use client'
 import Topbar from "../components/Topbar";
+import axios from "axios";
+import jwt from "jsonwebtoken";
 import Footer from "../components/Footer";
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -18,16 +20,25 @@ import Button from '@mui/material/Button';
 import { useRouter } from "next/navigation";
 import { Sign } from "crypto";
 
+const BASE_URL_END_POINT = "http://localhost:8000/user/login"
+
 export default function Login() {
+    const router = useRouter()
+
+    const [input, setInput] = React.useState({
+        email : '',
+        password : ''
+    })
+
+    const [error, setError] = React.useState('')
+
     const [showPassword, setShowPassword] = React.useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
   
-    const handleMouseDownPassword = (event) => {
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
     };
-
-    const router = useRouter()
 
     const Signup = async () => {
         router.push("/Signup")
@@ -36,10 +47,25 @@ export default function Login() {
         router.push("/forgetpass")
     }
 
+    const submitHandler = async (e: any) => {
+        e.preventDefault();
+        try {
+          const { data } = await axios.post(BASE_URL_END_POINT, {
+            ...input,
+          });
+    
+          localStorage.setItem('token', JSON.stringify(data.token));
+    
+          router.push('/Home');
+        } catch (error: any) {
+          console.log(error);
+          setError(JSON.stringify(error));
+        }
+      };
+
     return(
         <Box sx={{ display:'flex', flexDirection:"column", alignItems:'center', gap:'70px' }}>
             <Topbar/>
-            
             <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'48px', padding:'32px'}}>
                 <Box sx={{ fontSize:'32px' }}>
                     <p>Нэвтрэх</p>
@@ -47,7 +73,7 @@ export default function Login() {
                 <Box sx={{ width:'250px' }}>
                     <Box sx={{ width:'full', paddingY:'10px', fontSize:'14px' }}>
                         <p>Имэйл</p>
-                        <input 
+                        <input
                         className=" w-full flex flex-col items-center py-[15px] px-[10px] bg-[#F7F7F8] rounded-[4px]"
                         type="text"
                         placeholder="Имэйл хаягаа оруулна уу"
@@ -55,7 +81,7 @@ export default function Login() {
                     </Box>
                     <Box sx={{ width:'full', paddingY:'10px', fontSize:'14px' }}>
                         <p>Нууц үг</p>
-                        <Box sx={{width: '250px' }} variant="filled">
+                        <Box sx={{width: '250px' }}>
                         <FormControl sx={{ width: '250px' }} variant="filled">
                             <InputLabel htmlFor="filled-adornment-password">Нууц үг</InputLabel>
                             <FilledInput

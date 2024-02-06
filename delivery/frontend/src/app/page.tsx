@@ -7,7 +7,7 @@ import Home from "@/app/Home/page";
 export default function sd() {
   return (
     <main className="flex justify-center">
-      <Home/>
+      <Login/>
     </main>
   );
 }

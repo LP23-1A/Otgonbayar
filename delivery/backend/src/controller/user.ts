@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { userModel } from "../model/user";
+import jwt from "jsonwebtoken";
 
 type SignUpType = {
     username : string

@@ -3,8 +3,6 @@ import { Box, Button, FilledInput, FormControl, IconButton, InputAdornment, Inpu
 import * as React from 'react';
 import Modal from '@mui/material/Modal';
 import { Folder, Visibility, VisibilityOff } from "@mui/icons-material";
-import Signup from "../Signup/page";
-import Forget from "../forgetpass/page";
 import Profile from "../icon/Profile";
 import { useRouter } from "next/navigation";
 
@@ -21,7 +19,7 @@ export default function LoginModal() {
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
   
-    const handleMouseDownPassword = (event) => {
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
     };
     const Signup = async () => {
@@ -70,7 +68,7 @@ export default function LoginModal() {
                             </Box>
                             <Box sx={{ width:'full', paddingY:'10px', fontSize:'14px' }}>
                                 <p>Нууц үг</p>
-                                <Box sx={{width: '250px' }} variant="filled">
+                                <Box sx={{width:'250px'}}>
                                 <FormControl sx={{ width: '250px' }} variant="filled">
                                     <InputLabel htmlFor="filled-adornment-password">Нууц үг</InputLabel>
                                     <FilledInput
