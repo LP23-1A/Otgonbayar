@@ -11,4 +11,24 @@ export const createCategory = async (req : Request, res : Response) => {
     }
 }
 
+export const updatecategory = async (req : Request, res : Response) => {
+    try {
+        const { categoryId } = req.params
+        const updateonecategory = await categoryModel.findByIdAndUpdate(categoryId)
+        res.status(201).send(updateonecategory)
+    } catch (error) {
+        res.status(500)
+        console.log(error);
+    }
+}
 
+export const deletecategory = async (req : Request, res : Response) => {
+    try {
+        const { name } = req.body
+        const deleteonecategory = await categoryModel.findOneAndDelete({name})
+        res.status(201).send(deleteonecategory)
+    } catch (error) {
+        res.status(500)
+        console.log(error);
+    }
+}
