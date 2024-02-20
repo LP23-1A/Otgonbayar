@@ -1,6 +1,14 @@
 import { Request, Response } from "express";
 import { foodModel } from "../model/Food";
 
+import {v2 as cloudinary} from 'cloudinary';
+          
+cloudinary.config({ 
+  cloud_name: 'dlixczuat', 
+  api_key: '573177248848726', 
+  api_secret: 'vDqnotC2qgU_cbJimp0o6d30rdU' 
+});
+
 export const createFood = async (req : Request, res : Response) => {
     try {
         const {name, image, ingeredient } = req.body
@@ -23,7 +31,6 @@ export const getallfood = async (req : Request, res : Response) => {
 
 export const deletefood = async (req : Request, res : Response) => {
     try {
-        const { foodId } = req.params
         const { name } = req.body
         const deleteonefood = await foodModel.findOneAndDelete({name})
         res.status(201).send({success: true, deleteonefood})
