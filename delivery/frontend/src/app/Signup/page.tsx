@@ -16,6 +16,9 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
+import axios from 'axios';
+import { Router } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -27,8 +30,12 @@ export default function Signup() {
     const [number, setNumber] = React.useState('')
     const [password, setPassword] = React.useState('')
 
-    const handler = () => {
-        
+    const router = useRouter()
+
+    const handler = async () => {
+        let res = await axios.post(BASE_URL_END_POINT, {username : username, email : email, number : number, password : password})
+        console.log(res);
+        router.push("/Login")
     }
 
     const [showPassword, setShowPassword] = React.useState(false);
@@ -83,6 +90,8 @@ export default function Signup() {
                         <FormControl sx={{ width: '305px' }} variant="filled">
                             <InputLabel htmlFor="filled-adornment-password">Нууц үг</InputLabel>
                             <FilledInput
+                                value={password}
+                                onChange={(event) => setPassword(event.target.value)}
                                 id="filled-adornment-password"
                                 type={showPassword ? 'text' : 'password'}
                                 endAdornment={
@@ -131,7 +140,7 @@ export default function Signup() {
                         <Checkbox {...label} />
                         <p>Үйлчилгээний нөхцөл зөвшөөрөх</p>
                     </Box>
-                    <button className="w-full rounded-[4px] py-[8px] bg-[#EEEFF2] text-[#1C20243D]">Бүртгүүлэх</button>
+                    <button onChange={handler} className="w-full rounded-[4px] py-[8px] bg-[#EEEFF2] text-[#1C20243D]">Бүртгүүлэх</button>
                 </Box>
             </Box>
             <Footer/>
