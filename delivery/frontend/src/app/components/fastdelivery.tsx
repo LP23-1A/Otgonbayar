@@ -7,7 +7,7 @@ const mockdata = [
     {
         icon: <ImportContactsTwoToneIcon/>,
         title: "Хүргэлтийн төлөв хянах",
-        text: 'Захиалга бэлтгэлийн явцыг хянах'
+        text: 'Захиалга бэлтгэлийн явцыг хянах',
     },
     {
         icon: <AccessTimeRoundedIcon/>,
@@ -39,6 +39,7 @@ export default function fastdelivery() {
                         <Box sx={{fontSize:'14px', fontWeight:400}} >{props.text}</Box>
                     </Box>
                 </Box>
+                
             )
         })
     )

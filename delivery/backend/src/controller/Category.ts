@@ -24,11 +24,21 @@ export const updatecategory = async (req : Request, res : Response) => {
 
 export const deletecategory = async (req : Request, res : Response) => {
     try {
-        const { name } = req.body
-        const deleteonecategory = await categoryModel.findOneAndDelete({name})
+        const { categoryId } = req.params
+        const deleteonecategory = await categoryModel.findByIdAndDelete(categoryId)
         res.status(201).send(deleteonecategory)
     } catch (error) {
         res.status(500)
         console.log(error);
+    }
+}
+
+export const getallcategory = async (req : Request, res : Response) => {
+    try {
+        const getcategory = await categoryModel.find()
+        res.status(201).send(getcategory)
+    } catch (error) {
+        console.log(error);
+        res.status(500)
     }
 }

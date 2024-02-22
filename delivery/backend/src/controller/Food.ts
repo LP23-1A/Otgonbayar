@@ -31,8 +31,8 @@ export const getallfood = async (req : Request, res : Response) => {
 
 export const deletefood = async (req : Request, res : Response) => {
     try {
-        const { name } = req.body
-        const deleteonefood = await foodModel.findOneAndDelete({name})
+        const { foodId } = req.params
+        const deleteonefood = await foodModel.findByIdAndDelete(foodId)
         res.status(201).send({success: true, deleteonefood})
         console.log("deleted");
     } catch (error) {

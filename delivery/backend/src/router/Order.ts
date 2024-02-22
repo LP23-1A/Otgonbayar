@@ -1,9 +1,9 @@
 import express from "express";
-import { createOrder, deleteOrder, updateOrder } from "../controller/Order";
+import { createOrder, deleteOrder, getAllOrder, updateOrder } from "../controller/Order";
 
 const order = express.Router()
-order.route("/").post(createOrder)
-order.route("/order").delete(deleteOrder)
-order.route("/food/:id").delete(deleteOrder).put(updateOrder)
+order.route("/createOrder").post(createOrder)
+order.route("/getallorder").get(getAllOrder)
+order.route("/:id").delete(deleteOrder).put(updateOrder)
 
 export {order}

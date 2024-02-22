@@ -1,8 +1,9 @@
 import express from "express";
-import { createCategory, deletecategory, updatecategory } from "../controller/Category";
+import { createCategory, deletecategory, getallcategory, updatecategory } from "../controller/Category";
 
 const category = express.Router();
-category.route("/").post(createCategory);
-category.route("/category").delete(deletecategory)
+category.route("/createCategory").post(createCategory);
+category.route("/:id").delete(deletecategory).put(updatecategory);
+category.route("/getAllCategory").get(getallcategory);
 
 export { category };

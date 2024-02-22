@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import Background from "../icon/Homebg";
 import Fastdelivery from "../components/fastdelivery";
 import SaleMeals from "../components/Salemeals";
+import MainDish from "../components/Maindish";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 export default function Home() {
     return(
@@ -28,8 +30,21 @@ export default function Home() {
             <Stack sx={{display:'flex', flexDirection:'row', gap:'60px'}}>
                 <Fastdelivery/>
             </Stack>
+            <Stack sx={{width:'1267px', display:"flex", flexDirection:'row', justifyContent:'space-between', paddingX:'20px', marginTop:'50px', alignItems:'center'}}>
+                <Box>
+
+                    <Box sx={{fontWeight:'700', fontSize:'22px'}} >Хямдралтай</Box>
+                </Box>
+                <Box sx={{display:'flex', color:'#18BA51'}}>
+                    <Box>Бүгдийг харах</Box>
+                    <KeyboardArrowRightIcon/>
+                </Box>
+            </Stack>
             <Stack sx={{display:'flex', flexDirection:'row', gap:'45px'}}>
                 <SaleMeals/>
+            </Stack>
+            <Stack sx={{display:'flex', flexDirection:'row', gap:'45px'}}>
+                <MainDish/>
             </Stack>
             <Box sx={{marginTop:'200px'}}>
                <Footer/> 

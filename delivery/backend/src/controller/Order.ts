@@ -13,8 +13,8 @@ export const createOrder = async (req : Request, res : Response) => {
 
 export const deleteOrder = async (req : Request, res : Response) => {
     try {
-        const { name } = req.body
-        const deleteoneorder = await orderModel.findOneAndDelete({name})
+        const { orderId } = req.params
+        const deleteoneorder = await orderModel.findByIdAndDelete(orderId)
         res.status(201).send(deleteoneorder)
     } catch (error) {
         res.status(500)
