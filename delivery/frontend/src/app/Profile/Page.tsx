@@ -12,9 +12,12 @@ export default function Profile() {
     return(
         <Stack>
             <Topbar/>
-            <Stack sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-                <Box></Box>
-                <Box sx={{display:'flex', flexDirection:"column", alignItems:"center", gap:'20px'}}>
+            <Stack sx={{display:'flex', flexDirection:'column', alignItems:'center', gap:"10px"}}>
+                <Box sx={{display:"flex", flexDirection:"column", alignItems:"center", gap:"30px", fontWeight:"700", fontSize:"26px"}}>
+                    <Box></Box>
+                    <p>УгтахБаяр</p>
+                </Box>
+                <Box sx={{display:'flex', flexDirection:"column", alignItems:"center", gap:'20px', marginBottom:"100px", }}>
                     <Box sx={{display:'flex', alignItems:'center', gap:'10px', bgcolor:'#e6e6e6 ', paddingX:"40px", paddingY:'5px', borderRadius:'3px'}}>
                         <Box><AccountCircleOutlinedIcon/></Box>
                             <TextField
@@ -48,8 +51,13 @@ export default function Profile() {
                             />
                         <Box sx={{color:"#18BA51"}}><CreateOutlinedIcon/></Box>
                     </Box>
-                    <Box>
-
+                    <Box sx={{display:'flex', alignItems:'center', gap:"10px", paddingRight:"80px"}}>
+                        <HistoryIcon/>
+                        <p>Захиалгын түүх</p>
+                    </Box>
+                    <Box sx={{display:'flex', alignItems:'center', gap:"10px", paddingRight:"150px"}}>
+                        <LogoutIcon/>
+                        <p>Гарах</p>
                     </Box>
                 </Box>
             </Stack>
