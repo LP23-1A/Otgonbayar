@@ -4,27 +4,27 @@ import egg from "../../../public/egg.png";
 const mockdata = [
     {
         img: egg,
-        name:'Өглөөний хоол',
+        name:'Чихэрлэг тахиа',
         mainprice:'16,800₮',
     },
     {
         img: egg,
-        name:'Зайрмаг',
+        name:'Lunch',
         mainprice:'6,800₮',
     },
     {
         img: egg,
-        name:'Өглөөний хоол',
+        name:'Сэндвич',
         mainprice:'16,800₮',
     },
     {
         img: egg,
-        name:'Өглөөний хоол',
+        name:'Apple pie',
         mainprice:'16,800₮',
     },
 ]
 
-export default function MainDish() {
+export default function Salad() {
     return(
         mockdata.map((props) => {
             return(

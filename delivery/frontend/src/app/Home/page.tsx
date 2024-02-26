@@ -6,6 +6,8 @@ import Fastdelivery from "../components/fastdelivery";
 import SaleMeals from "../components/Salemeals";
 import MainDish from "../components/Maindish";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import Salad from "../components/Salad";
+import Amttan from "../components/Amttan";
 
 export default function Home() {
     return(
@@ -43,8 +45,41 @@ export default function Home() {
             <Stack sx={{display:'flex', flexDirection:'row', gap:'45px'}}>
                 <SaleMeals/>
             </Stack>
+            <Stack sx={{width:'1267px', display:"flex", flexDirection:'row', justifyContent:'space-between', paddingX:'20px', marginTop:'150px', alignItems:'center'}}>
+                <Box>
+                    <Box sx={{fontWeight:'700', fontSize:'22px'}} >Үндсэн хоол</Box>
+                </Box>
+                <Box sx={{display:'flex', color:'#18BA51'}}>
+                    <Box>Бүгдийг харах</Box>
+                    <KeyboardArrowRightIcon/>
+                </Box>
+            </Stack>
             <Stack sx={{display:'flex', flexDirection:'row', gap:'45px'}}>
                 <MainDish/>
+            </Stack>
+            <Stack sx={{width:'1267px', display:"flex", flexDirection:'row', justifyContent:'space-between', paddingX:'20px', marginTop:'150px', alignItems:'center'}}>
+                <Box>
+                    <Box sx={{fontWeight:'700', fontSize:'22px'}} >Салад ба зууш</Box>
+                </Box>
+                <Box sx={{display:'flex', color:'#18BA51'}}>
+                    <Box>Бүгдийг харах</Box>
+                    <KeyboardArrowRightIcon/>
+                </Box>
+            </Stack>
+            <Stack sx={{display:'flex', flexDirection:'row', gap:'45px'}}>
+                <Salad/>
+            </Stack>
+            <Stack sx={{width:'1267px', display:"flex", flexDirection:'row', justifyContent:'space-between', paddingX:'20px', marginTop:'150px', alignItems:'center'}}>
+                <Box>
+                    <Box sx={{fontWeight:'700', fontSize:'22px'}} >Амттан</Box>
+                </Box>
+                <Box sx={{display:'flex', color:'#18BA51'}}>
+                    <Box>Бүгдийг харах</Box>
+                    <KeyboardArrowRightIcon/>
+                </Box>
+            </Stack>
+            <Stack sx={{display:'flex', flexDirection:'row', gap:'45px'}}>
+                <Amttan/>
             </Stack>
             <Box sx={{marginTop:'200px'}}>
                <Footer/> 
