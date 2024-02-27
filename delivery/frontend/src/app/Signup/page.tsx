@@ -17,7 +17,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import axios from 'axios';
-import { Router } from 'next/router';
 import { useRouter } from 'next/navigation';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -54,7 +53,31 @@ export default function Signup() {
                     <p>Бүртгүүлэх</p>
                 </Box>
                 <Box sx={{width:'full'}}>
-                    <Box sx={{width:'305px', paddingY:'10px'}}>
+                    <TextField sx={{width:'305px', paddingY:'10px'}}
+                        hiddenLabel
+                        id="filled-hidden-label-normal"
+                        variant="filled"
+                        placeholder="Нэрээ оруулна уу"
+                        value={username}
+                        onChange={(event) => setUsername(event.target.value)}
+                        />
+                    <TextField sx={{width:'305px', paddingY:'10px'}}
+                        hiddenLabel
+                        id="filled-hidden-label-normal"
+                        variant="filled"
+                        placeholder="И-мэйл хаягаа оруулна уу"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                        />
+                    <TextField sx={{width:'305px', paddingY:'10px'}}
+                        hiddenLabel
+                        id="filled-hidden-label-normal"
+                        variant="filled"
+                        placeholder="Дугаар оруулна уу"
+                        value={number}
+                        onChange={(event) => setNumber(event.target.value)}
+                        />
+                    {/* <Box sx={{width:'305px', paddingY:'10px'}}>
                         <p className="text-[14px]">Нэр</p>
                         <input 
                         value={username}
@@ -83,7 +106,7 @@ export default function Signup() {
                         type="text"
                         placeholder="Дугаар оруулна уу"
                         />
-                    </Box>
+                    </Box> */}
                     <Box sx={{paddingY:'10px'}}>
                         <p className="text-[14px]">Нууц үг</p>
                         <Box sx={{width: '25ch' }} >

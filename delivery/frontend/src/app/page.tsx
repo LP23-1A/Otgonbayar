@@ -9,7 +9,7 @@ import Profile from "@/app/Profile/Page";
 export default function sd() {
   return (
     <main className="flex justify-center">
-      <Profile/>
+      <Menu/>
     </main>
   );
 }

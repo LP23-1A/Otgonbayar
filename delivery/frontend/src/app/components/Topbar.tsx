@@ -12,7 +12,6 @@ import { useRouter } from "next/navigation";
 
 export default function Navbar() {
     const router = useRouter() 
-    
     return(
         <Box sx={{ width:"1240px", display:'flex', justifyContent:'space-between', padding:'20px' }}>
             <Stack sx={{ display:'flex', flexDirection:'row', alignItems:'center', gap:'24px' }}>
