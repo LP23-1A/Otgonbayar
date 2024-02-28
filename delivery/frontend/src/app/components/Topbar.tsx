@@ -9,16 +9,20 @@ import Modal from '@mui/material/Modal';
 import { Visibility } from "@mui/icons-material";
 import LoginModal from "../components/LoginModal";
 import { useRouter } from "next/navigation";
+import Bags from "../components/Bags";
 
 export default function Navbar() {
-    const router = useRouter() 
+    const router = useRouter()
+    const pushMenu = async () => {
+        router.push("/Menu")
+    }
     return(
         <Box sx={{ width:"1240px", display:'flex', justifyContent:'space-between', padding:'20px' }}>
             <Stack sx={{ display:'flex', flexDirection:'row', alignItems:'center', gap:'24px' }}>
-                <div><Logo/></div>
+                <Box><Logo/></Box>
                 <Box sx={{ display:'flex', gap:'20px' }}>
                     <button>НҮҮР</button>
-                    <button>ХООЛНЫ ЦЭС</button>
+                    <button onClick={pushMenu}>ХООЛНЫ ЦЭС</button>
                     <button>ХҮРГЭЛТИЙН БҮС</button>
                 </Box>
             </Stack>
@@ -29,7 +33,7 @@ export default function Navbar() {
                 </Box>
                 <Box sx={{ display:'flex', alignItems:'center', gap:'8px', paddingX:'16px', paddingY:'8px' }}>
                     <Bag/>
-                    <p>Сагс</p>
+                    <Bags/>
                 </Box>
                 <LoginModal/>
             </Stack>

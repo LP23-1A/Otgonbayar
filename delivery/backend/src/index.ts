@@ -4,11 +4,13 @@ import { auth } from "./router/user";
 import { category } from "./router/Category";
 import { food } from "./router/Food";
 import { order } from "./router/Order";
+import cors from "cors";
 
 connectDatabase()
 
 const start = () => {
     const app = express()
+    app.use(cors());
     app.use(express.json())
     app.use("/order", order)
     app.use("/food", food)

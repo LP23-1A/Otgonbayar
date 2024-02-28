@@ -19,8 +19,7 @@ const newMongoose = new mongoose.Schema({
     password: {
         type: String,
         select: false
-    },
-    avatarimg: Buffer
+    }
 })
 const userModel = mongoose.model("user", newMongoose )
 export {userModel}

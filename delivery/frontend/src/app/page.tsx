@@ -5,11 +5,12 @@ import Login from "@/app/Login/page";
 import Home from "@/app/Home/page";
 import Menu from "@/app/Menu/Page";
 import Profile from "@/app/Profile/Page";
+import Order from "@/app/Order/Page";
 
 export default function sd() {
   return (
     <main className="flex justify-center">
-      <Menu/>
+      <Order/>
     </main>
   );
 }

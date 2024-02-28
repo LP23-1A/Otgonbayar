@@ -163,7 +163,7 @@ export default function Signup() {
                         <Checkbox {...label} />
                         <p>Үйлчилгээний нөхцөл зөвшөөрөх</p>
                     </Box>
-                    <button onChange={handler} className="w-full rounded-[4px] py-[8px] bg-[#EEEFF2] text-[#1C20243D]">Бүртгүүлэх</button>
+                    <button onClick={handler} className="w-full rounded-[4px] py-[8px] bg-[#EEEFF2] text-[#1C20243D]">Бүртгүүлэх</button>
                 </Box>
             </Box>
             <Footer/>
